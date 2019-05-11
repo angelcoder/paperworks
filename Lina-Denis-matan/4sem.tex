@@ -1,0 +1,474 @@
+
+
+\newpage
+\section{\Large{Інтеграл на брусі}}
+
+\begin{definition}
+    Число $I$ називають\textcolor{NavyBlue}{\textbf{\textit{ інтегралом функції}}} $f$\textcolor{NavyBlue}{\textbf{\textit{ на брусі}}} $D$, якщо \newline $\forall \varepsilon > 0 \;  \exists \delta >0 \ \forall P \ \forall \xi: |d_p| < \delta \Rightarrow  |S(P, \: \xi) - I| < \varepsilon. \newline$
+    позначають: $I = \Int_D f(x, \: y) \, \mathrm{d}D = \Int_D f(x, \: y) \, \mathrm{d}x \,  \mathrm{d}y = \iint\limits_{D} f(x, \: y) \, \mathrm{d}x \, \mathrm{d}y$ 
+\end{definition}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{властивості інтеграла Рімана на брусі}}}]
+\end{theorem}
+    \begin{enumerate}
+        \item $f(x, \: y) = $ const $\Rightarrow \Int_D C \, \mathrm{d}x \, \mathrm{d}y = C\mu(D) \;\;\;\;\; (\mu \;- $ міра $D$ в $\mathbb{R}^n)$
+        
+        \item якщо $f$ і $g \: - $ інтегровні функції на $D$, то $\forall c_1, c_2 \in \mathbb{R}:
+        \newline {\Int_D(c_1f + c_2g) \, \mathrm{d}D = c_1\Int_D f \, \mathrm{d}D + c_2 \Int_D g \, \mathrm{d}D}$
+        
+        \item якщо $f$ і $g \: - $ інтегровні функції на $D$ і $f(x, \: y) \leqslant g(x, \: y) \ \forall (x, \: y) \in D$, то \newline $\Int_D f(x, \: y) \, \mathrm{d}x \, \mathrm{d}y \leqslant \Int_D g(x, \: y) \, \mathrm{d}x \, \mathrm{d}y$ 
+        
+        \item якщо $D = D_1 \cup D_2$, де $D_1, D_2, D \: -$ бруси, $D_1$ та $D_2$ не мають спільних комірок \newline і $f \: - $ інтегровна на $D$, то $\Int_D f \, \mathrm{d}D = \Int_{D_1} f \, \mathrm{d}D_1 + \Int_{D_2} f \, \mathrm{d}D_2$
+    \end{enumerate}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Лебега, критерій інтегровності на брусі}}}}}]
+    Нехай $D \: - $ брус, $f \: -$ обмежена функція на $D$, \newline множина точок розривів якої має лебегову міру нуль. Тоді $f$ інтегровна на брусі $D$. 
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Фубіні №1}}}}}]
+    Нехай $f \: - $ неперервна на брусі $D = [a_1, \: b_1]\times[a_2; \: b_2]$. Тоді $\newline$
+  
+    $\centerline{\Int_D f(x, \: y) \, \mathrm{d}x \, \mathrm{d}y = \Int_{a_1}^{b_1}\left(\Int_{a_2}^{b_2} f(x, \: y) \, \mathrm{d}y\right) \mathrm{d}x= \Int_{a_2}^{b_2}\left(\Int_{a_1}^{b_1} f(x, \: y) \, \mathrm{d}x\right) \mathrm{d}y}$
+\end{theorem}
+
+
+\begin{definition}
+    Множину $M \subset \mathbb{R}^2$ називають \textcolor{NavyBlue}{\textbf{\textit{циліндричною}}}, якщо існують функції $\varphi$ та $\psi$, визначені на $[a; \: b]$, що $\varphi(x) \leqslant \psi(x) \ \forall x \in [a; \: b]$ та $M = \{(x; \: y)| \: x \in [a; \: b], \: \varphi(x) \leqslant y \leqslant \psi(x)\}$.
+\end{definition}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Фубіні №2}}}}}]
+    Нехай $D = \{(x; \: y)| \: x \in [a; \: b], \: \varphi(x) \leqslant y \leqslant \psi(x)\} \: - $ циліндрична множина, \newline а функція $f$ визначена та неперервна на $D$. Тоді \newline
+    $\centerline{\Int_D f(x, \: y) \, \mathrm{d}x \, \mathrm{d}y = \Int_{a}^{b}\left(\Int_{\varphi(x)}^{\psi(x)} f(x, \: y) \, \mathrm{d}y\right) \mathrm{d}x}$
+\end{theorem}
+
+
+\section{\Large{Заміна змінних в кратному інтегралі}}
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про за заміну змінної в кратному інтегралі}}}}}]
+    Нехай $\Omega \subset \mathbb{R}^2 \: -$  компакт, функція $g: \mathbb{R}^2 \to \mathbb{R}^2, \newline g(u, \: v) = (x(u, \: v), \: y(u, \: v)) $ встановлює взаємно однозначну відповідність (бієкцію) між $\Omega $ і $D$. Якщо 
+    \begin{enumerate}
+        \item $g \in C^1(\Omega)$
+        \item $f \in C(D)$
+        \item  $\det \begin{pmatrix} x'_u & y'_u \\ x'_v & y'_v \end{pmatrix} \neq 0$ в $\Omega$, то 
+    \end{enumerate}
+     $\centerline{$\Int_D f(x, \: y) \, \mathrm{d}x \, \mathrm{d}y =\Int_\Omega f(x(u, \: v), \: y(u, \: v)) \left | \det \begin{pmatrix} x'_u & y'_u \\ x'_v & y'_v \end{pmatrix}(u, \: v) \right | \, \mathrm{d}u \, \mathrm{d}v $}$
+\end{theorem}
+
+
+\subsection{\large{Полярні координати}}
+        \begin{cases}  
+        x = r \cos{\varphi} \\
+        y = r \sin{\theta} \\
+    \end{cases}, де $\;\;\;$
+    \begin{cases}  
+        0 \leqslant r \\
+        0 \leqslant \varphi \leqslant 2\pi \\ 
+    \end{cases}
+\newline
+Визначник переходу від декартових координат $(x, \: y)$ до полярних координат $(\varphi, \: r)$ дорівнює \\ 
+$\mu = \left | \det \dfrac{D(x, \: y)}{D(\varphi, \: r)} \right |= r$, \;\;\;
+$\dfrac{D(x, \: y)}{D(\varphi, r)} = $
+\begin{pmatrix} 
+    x'_\varphi & y'_\varphi \\
+    x'_r & y'_r \\ 
+\end{pmatrix}
+
+
+\subsection{\large{Узагальнені полярні координати}}
+\begin{cases}  
+        x = a r \cos^\alpha{\varphi} \\
+        y = b r \sin^\alpha{\varphi} \\
+    \end{cases}, де $\;\;\;$
+    \begin{cases}  
+        0 \leqslant r \\
+        0 \leqslant \varphi \leqslant \dfrac{\pi}{2} \\ 
+    \end{cases}
+    $a > 0, \: b > 0$
+\newline
+$\mu = \left | \det \dfrac{D(x, \: y)}{D(\varphi, \: r)} \right |= a b\alpha r \cos^{\alpha-1}{\varphi}\sin^{\alpha-1}{\varphi}$, \;\;\;
+$\dfrac{D(x, \: y)}{D(\varphi, r)} = $
+\begin{pmatrix} 
+    x'_\varphi & y'_\varphi \\
+    x'_r & y'_r \\ 
+\end{pmatrix}
+
+
+\subsection{\large{Сферичні координати}}
+    \begin{cases}  x = \rho \cos{\theta} \cos{\varphi} \\ y = \rho \cos{\theta} \sin{\varphi} \\ z = \rho \sin{\theta}  \end{cases}, де \;\;\;\;  \begin{cases} \;\;\;\;  0 \leqslant \rho \\  -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2} \\  \; \;\;\: 0 \leqslant \varphi \leqslant 2 \pi  \end{cases}
+
+
+\newline
+Визначник переходу від декартових координат $(x, \: y, \: z)$ до сферичних координат $(\rho, \: \theta, \: \varphi)$ дорівнює \\
+\hspace{0.1}
+
+ $\mu = \left | \det \dfrac{D(x, \: y, \: z)}{D(\rho,\theta,\varphi)} \right |=\rho^2 \cos{\theta}, \;\;\;
+$\dfrac{D(x, \: y, \: z)}{D(\rho, \: \theta, \: \varphi)} = $
+\begin{pmatrix} x'_\rho & x'_\theta & x'_\varphi \\ y'_\rho & y'_\theta & y'_\varphi \\ z'_\rho & z'_\theta & z'_\varphi \end{pmatrix}
+
+
+\subsection{\large{Узагальнені сферичні координати}}
+    \begin{cases}  x = a \rho \cos^\alpha {\theta} \cos^\beta {\varphi} \\ y = b \rho \cos^\alpha{\theta} \sin^\beta {\varphi} \\ z = c \rho \sin^\alpha{\theta}  \end{cases}, де \;\;\; \begin{cases} x \geqslant 0 \\ y \geqslant 0  \\  z \geqslant  0\end{cases}, \;\;\; \begin{cases} 0 \leqslant \theta \leqslant \dfrac{\pi}{2} \\   0 \leqslant \rho \\ 0 \leqslant \varphi \leqslant \dfrac{\pi}{2}  \end{cases} \\
+ 
+\hspace{0.05}
+
+$\mu = \left | \det \dfrac{D(x, \: y, \: z)}{D(\rho, \: \theta, \: \varphi)} \right |=abc \alpha \beta \rho^2 \cos^{2\alpha -1}{ \theta } \sin^{\alpha -1}{ \theta } \cos^{\beta -1}{\varphi} \sin^{\beta -1}{ \varphi }$
+
+
+\subsection{\large{Циліндричні координати}}
+    \begin{cases}  x = \rho \cos{\varphi} \\ y = \rho \sin{\varphi} \\ z = h \end{cases}, де \;  \begin{cases}\;  0 \leqslant \rho \\  \; 0 < \varphi \leqslant 2 \pi \\  \; h \in \mathbb{R}  \end{cases}\\
+
+\hspace{0.1}
+
+$\mu = \left | \det \dfrac{D(x, \: y, \: z)}{D(\rho, \: \theta, \: \varphi)} \right |= \rho$
+ 
+
+\subsection{\large{Сферичні координати в  $\mathbb{{R}}^n$}}
+ \begin{cases}  x_1 \; \; \; \, = \; \rho \cos{\theta_1} \cos{\theta_2} \dots \cos{\theta_{n-2} \cos{\varphi} \\ x_2 \; \; \; \, = \; \rho \cos{\theta_1} \cos{\theta_2} \dots \cos{\theta_{n-2} \sin{\varphi} \\ \dots \\ x_{n-1} = \; \rho \cos{\theta_1} \sin{\theta_2} \\ x_n \; \; \; \, = \; \rho \sin{\theta_1}  \end{cases}, де \;  \begin{cases} \;\;\;\;\;\;\;\;\;\;\;\;\:\; 0 \leqslant \rho \\  \; - \dfrac{\pi}{2} \leqslant \theta_1, \theta_2, \dots , \theta_{n-2} \leqslant \dfrac{\pi}{2} \\  \; \;\;\;\;\;\;\;\;\;\;\;\; 0 \leqslant \varphi \leqslant 2 \pi  \end{cases} \\
+ 
+ \hspace{0.1}
+ 
+ $\mu = \left | \det \dfrac{D(x_1, \: \dots, \: x_n)}{D(\rho, \: \theta_1, \: \dots,\: \theta_{n-2}, \: \varphi)} \right |=\rho^{n-1} \cos^{n-2}{ \theta_1 } \cos^{n-3}{ \theta_2}\dots \cos{ \theta_{n-2}}$
+ 
+
+
+\section{\Large{Криволінійні інтеграли}}
+\subsection{\large{Криволінійний інтеграл першого роду}}
+$l:\begin{cases}  x=x(t) \\ y=y(t)  \end{cases} - $ неперервно-диференційовані функції, $t \in [t_0; \: t_1]$ \\
+$\vv{v}(t) = (x'(t), \: y'(t)), \;\; \left | \vv{v}(t) \right | \neq 0, \;\; \left | \vv{v}(t) \right | =  \sqrt{(x'(t))^2 + (y'(t))^2}  $\\
+
+$l=\Int_{t_0}^{t_1} \sqrt{(x'(t))^2 + (y'(t))^2} \, \mathrm{d}t \: -$ формула знаходження довжини кривої в декартових координатах \\
+
+ $I=\Int_{t_0}^{t_1} f(x(t), \: y(t)) \left | v(t) \right | \mathrm{d}t \: - $
+ \textcolor{NavyBlue}{\textbf{\textit{криволінійний інтеграл першого роду}}}.\\
+Має таке позначення: $I= \Int_{l} f(x, \: y) \, \mathrm{d}l$\\
+Криволінійний інтеграл по замкненому контуру позначається так: $$I= \oint\limits_{l} f(x, \: y) \, \mathrm{d}l$$
+
+\subsection{\large{Криволінійний інтеграл другого роду}}
+
+$A \: - $ робота по переміщенню з точки A в точку B. $\vv{F}=(f_1(x, \: y), \: f_2(x, \: y)), \;f_i: \mathbb{R}^2 \rightarrow \mathbb{R}, \; f_i \in C(\mathbb{R}^2) $\\
+ $\Delta A= |  \vv{F}(t) | \cos{ \varphi} \left |  \vv{v}(t) \right |  \Delta t = ( \vv{F}(t), \: \vv{v}(t)) \Delta t $ \\
+ $A = \Int_{t_0}^{t_1} (\vv{F}(t), \vv{v}(t)) \, \mathrm{d}t = \Int_{t_0}^{t_1} (f_1(x(t), \: y(t))x'(t) + f_2(x(t), \: y(t))y'(t)) \, \mathrm{d}t \:- \textcolor{NavyBlue}{\textbf{\textit{криволінійний інтеграл другого роду}}}. \newline$
+ Має таке позначення: $I= \Int\limits_{l_{op.}} f_1 \mathrm{d}x + f_2 \mathrm{d}y$
+ 
+\subsection{\large{Формула Гріна}}
+Нехай $D\: - $ циліндрична множина (або розбивається на циліндричні множини), $f_1, f_2 \in C^1 (  \mathbb{R}^2).$ Тоді \\
+$$\oint\limits_{C_{op.}} f_1 \, \mathrm{d}x + f_2 \, \mathrm{d}y = \iint\limits_{D} \left ( \dfrac{\partial{f_2}}{\partial{x}}-\dfrac{\partial{f_1}}{\partial{y}}\right) \mathrm{d}x \, \mathrm{d}y$$
+
+
+\begin{theorem}
+Нехай $D \: -$ циліндрична множина, $D \subset \mathbb{R}^2,\: f=(f_1, f_2), \: f_i:\mathbb{R}^2 \rightarrow \mathbb{R}, \: f_i \in C^1(D). \newline $ Тоді такі умови є рівносильними:
+    \begin{enumerate}
+            \item  Для будь-якого замкненого контура $C$ в $D:$ $$\oint\limits_{C_{op.}} f_1 \, \mathrm{d}x + f_2 \, \mathrm{d}y = 0 $$
+         \item Нехай $A, B \in D$. Тоді для будь-якої кривої $l$, що з'єднує т. $A$ і т. $B$ \,($A-$початок): $\Int_{l}} f_1 \, \mathrm{d}x + f_2 \, \mathrm{d}y = const$
+        \item $\exists u: \mathbb{R}^2 \rightarrow \mathbb{R}$ (повний диференціал, потенціал): $\mathrm{d}u = f_1 \, \mathrm{d}x + f_2 \, \mathrm{d}y$ в $D$ 
+        \item $\dfrac{\partial{f_1}}{\partial{y}}=\dfrac{\partial{f_2}}{\partial{x}}$ в $D$
+    \end{enumerate}
+\end{theorem}
+
+
+\section{\Large{Поверхневі інтеграли}}
+
+\subsection{\large{Поверхневі інтеграли першого роду}}
+Нехай система $\;$
+\begin{cases}
+        x = x(u, \:v)\\
+        y = y(u, \:v)\\
+        z = z(u, \:v)\\
+\end{cases}
+задає поверхню $S$ (параметрично), а функція $f(x, \: y, \:z)$ густину в кожній точці.
+
+Маса $M$ поверхні $S$ знаходиться таким чином:\\
+\hspace{0.3}  
+$\vv{\varphi_u} = (x'_u, \: y'_u, \:z'_u)$ та $\vv{\varphi_v} = (x'_v, \: y'_v, \:z'_v)$
+\\[0.15cm]
+$E = {\left| \vv{\varphi_u}\right|}^2 = (x'_u)^2 + (y'_u)^2 + (z'_u)^2;$ 
+$\;\;\;\; G = {\left|\vv{\varphi_v}\right|}^2 = (x'_v)^2 + (y'_v)^2 + (z'_v)^2;$
+$\;\;\;\;F = (\vv{\varphi_u}, \: \vv{\varphi_v}) = x'_u x'_v + y'_u y'_v + z'_u x'_v$
+\\[0.15cm]
+Тоді $M = \Int_D f(x(u,v), \:y(u,v), \: z(x(u,v), \:y(u,v)) \sqrt{E G - F^2} \,\mathrm{d}u \,\mathrm{d}v \;$ називають \textcolor{NavyBlue}{\textbf{\textit{поверхневим інтегралом першого роду}}} і позначають $\Int_S f \, \mathrm{d}S$
+
+Якщо поверхню задано явно, тобто $z = z(x,\: y), \;(x,\:y) \in D$, то
+$M = \Int_D f(x, \:y, \: z(x, \:y)) \sqrt{(z'_x)^2 + (z'_y)^2 + 1} \,\mathrm{d}x \,\mathrm{d}y$
+
+
+\subsection{\large{Поверхневі інтеграли другого роду}}
+
+Нехай $F = (f_1,\: f_2,\: f_3)\:-$ вектор швидкості, $f_i: \mathbb{R}^3\to \mathbb{R}, \; f_i \in C(\mathbb{R}^3). \; S_{op.} \: -$ орієнтована поверхня.
+
+Число $m = \Int_{S_{op.}} f_1\,\mathrm{d}y\,\mathrm{d}z + f_2\,\mathrm{d}z\,\mathrm{d}x + f_3\,\mathrm{d}x\,\mathrm{d}y \;$ називають \textcolor{NavyBlue}{\textbf{\textit{поверхневим інтегралом другого роду}}}
+
+Якщо $S_{op.}$ задано параметрично, то
+$m =
+    \Int_D f_1\begin{vmatrix}
+     y'_u& z'_u\\ 
+     y'_v& z'_v
+    \end{vmatrix}
++
+     f_2\begin{vmatrix}
+     z'_u & x'_u\\ 
+     z'_v & x'_v 
+    \end{vmatrix}
++
+    f_3\begin{vmatrix}
+     x'_u& y'_u\\ 
+     x'_v& y'_v
+    \end{vmatrix}
+\, \mathrm{d}u \, \mathrm{d}v
+$
+
+Якщо $S_{op.}$ задано явно, то $m = \Int_D f_1(-z'_x) + f_2(-z'_y) + f_3 \, \mathrm{d}x \, \mathrm{d}y$
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{формула Остроградського-Гаусса}}}}}]
+    Нехай $V\:-$ циліндричне тіло, обмежене замкненою \newline поверхнею $S. \; F=(f_1, \: f_2, \: f_3)\: -$ векторне поле, $f_i \in C^1(\mathbb{R}^3), \; \vv{n}\:-$ вектор зовнішньої нормалі до поверхні. Тоді \\
+    
+    \centerline{\Int_{S_{op.}} (\vv{F}, \: \vv{n})  \,\mathrm{d}S = \Int_V \dfrac{\partial f_1}{\partial x} + \dfrac{\partial f_2}{\partial y} + \dfrac{\partial f_3}{\partial z} \,\mathrm{d}x \,\mathrm{d}y \,\mathrm{d}z}
+   
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{формула Стокса}}}}}]
+    Нехай $S\:-$ деяка поверхня, межею якої є замкнений контур $C. \newline F=(f_1, \: f_2, \: f_3)\: -$ векторне поле, $f_i \in C^1(\mathbb{R}^3), \; \vv{n}\:-$ вектор нормалі. Тоді має місце рівність: \\
+    \centerline{\Int_{S_{op.}} (\operatorname{rot} \vv{F}, \vv{n})  \,\mathrm{d}S = \oint\limits_{C_{op.}} f_1 \,\mathrm{d}x +f_2 \,\mathrm{d}y +f_3 \,\mathrm{d}z}
+
+
+    Ліву частину формули можна переписати так:\\
+ \centerline{\Int_{S_{op.}} \left(\dfrac{\partial f_3}{\partial y}-\dfrac{\partial f_2}{\partial z}\right) \mathrm{d}y \,\mathrm{d}z +\left(\dfrac{\partial f_1}{\partial z}-\dfrac{\partial f_3}{\partial x}\right) \mathrm{d}z \,\mathrm{d}x + \left(\dfrac{\partial f_2}{\partial x}-\dfrac{\partial f_1}{\partial y}\right) \mathrm{d}x \,\mathrm{d}y }
+\end{theorem}
+
+
+\newpage
+\section{\Large{Теорія міри}}
+
+\subsection{\large{Класи множин}}
+\begin{definition}
+    Сукупність множин $\mathcal{H} \subset 2^X $ називається \textcolor{NavyBlue}{\textbf{\textit{напівкільцем}}}, якщо
+    \begin{enumerate}
+        \item $\forall A, B \in \mathcal{H} \Rightarrow  A \cap B \in \mathcal{H}$
+        \item $\forall A, B \in \mathcal{H} \Rightarrow \exists C_1, C_2, \dots ,C_n \in \mathcal{H}: \; A \setminus B = \displaystyle\bigsqcup\limits_{i = 1}^n C_i$
+    \end{enumerate}
+\end{definition}
+
+
+\begin{definition}
+    Нехай $\mathcal{H}\:-$ півкільце ($\mathcal{H} \subset 2^X$). Функція $\mu:\mathcal{H} \rightarrow [0; \: + \infty] $ називається  
+    \textcolor{NavyBlue}{\textbf{\textit{мірою}}} на $\mathcal{H}$, якщо
+    \begin{enumerate}
+        \item $\forall A \in \mathcal{H}, \; \mu (A) \geqslant 0 \;\; (+\infty \geqslant 0 \: -$ невід'ємність)  
+        \item $\forall A_1, A_2, .\,.\,. \in \mathcal{H}, \; \displaystyle\bigsqcup\limits_{i = 1}^\infty  A_i \in \mathcal{H}: \mu\left(\displaystyle\bigsqcup\limits_{i = 1}^\infty  A_i\right) =  \Sum_{i=1}^{\infty} \mu (A_i) \;\; (\sigma$-адитивність)
+    \end{enumerate}
+\end{definition}
+
+
+\subsection{\large{Продовження міри на кільце}}
+\begin{definition}
+    Нехай $X \neq \varnothing$. Сукупність множин $\mathcal{K} \subset 2^X $ називається \textcolor{NavyBlue}{\textbf{\textit{кільцем}}}, якщо
+    \begin{enumerate}
+        \item $\forall A, B \in \mathcal{K} \Rightarrow  A \cap B \in \mathcal{K}$
+        \item $\forall A, B \in \mathcal{K} \Rightarrow  A \setminus B \in \mathcal{K}$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    Нехай $\mathcal{K} \:-$кільце ($\mathcal{K} \subset 2^X$). Тоді $\mathcal{K} \:-$ півкільце.
+\end{theorem}
+
+\begin{definition}
+    $M \subset 2^X$. Кільце, яке позначають $\mathcal{K} (M)$, називається  \textcolor{NavyBlue}{\textbf{\textit{породженим кільцем}}}, якщо
+    \begin{enumerate}
+        \item $M \subset \mathcal{K}(M)$
+        \item $\forall \mathcal{K}\:-$ кільце: $M \subset \mathcal{K}$ виконується, що $\mathcal{K}(M) \subset \mathcal{K}$, тобто $\mathcal{K}(M)\:-$найменше кільце, що містить $M$
+    \end{enumerate}
+\end{definition}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про породжене кільце}}}}}]
+    Нехай $\mathcal{H}\:-$півкільце, $\mathcal{H} \subset 2^X$. Тоді породжене кільце утворюється так: \centerline{$\mathcal{K}( \mathcal{H})= \left\{\displaystyle\bigsqcup\limits_{i = 1}^m C_i | \; C_i \in \mathcal{H}, \; m \in \mathbb{N}\right\}$}
+\end{theorem}
+
+
+\subsection{\large{Продовження міри на алгебрі}}
+\begin{definition}
+    Нехай $\mathcal{A}\:-$ кільце (півкільце), $\mathcal{A} \subset 2^X$. Якщо $X \in \mathcal{A},$  то $\mathcal{A}$ називається \newline \textcolor{NavyBlue}{\textbf{\textit{алгеброю (півалгеброю)}}}.
+\end{definition}
+
+
+\subsection{\large{Підхід Лебега}}
+
+
+\begin{definition}
+    Сукупність множин $\sigma \mathcal{K} \subset 2^X$ називають $\sigma$-кільцем, якщо
+    \begin{enumerate}
+        \item $\sigma \mathcal{K}\:-\:$кільце
+        \item $\forall A_i \in \sigma \mathcal{K}, \;\; i \in \mathbb{N}
+      	\Rightarrow  \displaystyle\bigcup\limits_{i = 1}^{\infty} A_i \in \sigma \mathcal{K}$
+    \end{enumerate}
+\end{definition}
+
+
+\begin{definition}
+    Сукупність множин $\sigma \mathcal{A} \subset 2^X$ називають $\sigma$-алгеброю, якщо
+    \begin{enumerate}
+        \item $\sigma \mathcal{A} - \sigma$-кільце
+        \item $X \in \sigma \mathcal{A}$
+    \end{enumerate}
+\end{definition}
+
+
+\begin{definition}
+   Нехай $\mathcal{H} \subset 2^X-$ сукупність множин. $\sigma$-кільце (позн. $\sigma \mathcal{K}(\mathcal{H}))$ називають породженим сукупністю $\mathcal{H}$, якщо
+    \begin{enumerate}
+        \item $\mathcal{H} \subset \sigma \mathcal{K}(\mathcal{H}) $
+        \item якщо $\sigma \mathcal{K}_1-\sigma$-кільце, що містить $\mathcal{H}$, то $\sigma \mathcal{K}(\mathcal{H}) \subset \sigma \mathcal{K}_1$ 
+    \end{enumerate}
+\end{definition}
+Аналогічно визначається породжена $\sigma$-алгебра.
+\begin{definition}
+   Функцію  $\lambda^*: 2^X \rightarrow \mathbb{\overline{R}}, \; D(\lambda^*) = 2^X $ називають \textcolor{NavyBlue}{\textbf{\textit{зовнішнью мірою}}} (абстрактною зовнішнью мірою), якщо
+    \begin{enumerate}
+        \item $\lambda^*(\varnothing) = 0 $
+        \item $\lambda^*(A) \geqslant 0 \;\; \forall A \subset X$
+        \item $\forall A, A_i \subset X \;\; A \subset \displaystyle\bigcup\limits_{i = 1}^{\infty} A_i: \;\;\; \lambda^*(A) \leqslant \Sum_{i=1}^{\infty} \lambda^*(A_i)$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{властивості зовнішньої міри}}}}}]
+    Нехай $\lambda^*-$ зовнішня міра. Тоді
+     \begin{enumerate}
+        \item $\forall A, B \;\; A \subset B:\;\; \lambda^*(A) \leqslant \lambda^*(B)$
+        \item $\forall A, B \;\; A \subset B:\;\; \lambda^*(A \cup B) \leqslant \lambda^*(A) + \lambda^*(B)$
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Каратеодорі]
+     Нехай $\lambda^*-$ зовнішня міра над $X$. Множину $A \subset X$ називають  \textcolor{NavyBlue}{\textbf{\textit{вимірною}}}, якщо $\forall B \subset X$ виконується рівність:\\
+     \centerline{$\lambda^*(B) = \lambda^*(B \cap A) + \lambda^*(B \cap \overline{A})$}
+\end{definition}
+
+\begin{theorem}
+    Нехай $\lambda^*-$ зовнішня міра над $X$. Тоді сукупність $S$ всіх вимірних множин утворює $\sigma$-алгебру та звуження $\lambda^*$ на $S$ є мірою.
+\end{theorem}
+
+\begin{theorem}
+    Нехай $\mu \;-$ міра на кільці $\mathcal{K},\; \mu^*\;-$ зовнішня міра, породжена $\mu$, $S \; -$ клас вимірних множин. Тоді
+     \begin{enumerate}
+        \item $\mu^*|_{\mathcal{K}} = \mu$
+        \item $\mathcal{K} \subset S$
+    \end{enumerate}
+\end{theorem}
+
+\[
+\begin{tikzpicture}
+    \path 
+      (0,0) rectangle (10,6.5) [draw]
+      (0.4,0.4) rectangle (9.6,5.5) [draw]
+      (0.8,0.8) rectangle (9.2,4.5) [draw]
+      (1.2,1.2) rectangle (8.8,3.5) [draw]
+      (1.6,1.6) rectangle (8.4,2.5) [draw]
+      
+      (3.65,6) node[right]{Булеан $2^X,\; \mu^*$ }
+      (1.85,5) node[right]{Клас вимірних множин $S,\; \mu = \mu^*|_S $} 
+      (1.45,4) node[right]{Породжена $\sigma-$алгебра $\mathcal{A}=\mathcal{A}(\mathcal{K}), \; \mu = \mu^*|_S $} 
+      (2.37,3) node[right]{Породжене кільце $\mathcal{K}=\mathcal{K}(\mathcal{H}), \; \mu$}
+      (3.73,2) node[right]{Півкільце $\mathcal{H},\; \mu$} 
+\end{tikzpicture}
+\]
+
+
+\subsection{\large{Міра Лебега}}
+\begin{definition}
+Зафіксуємо півкільце $\mathcal{H}=\left\{[a;\:b)\;| \; a,b \in \mathbb{R},\; a<b\right\} \cup \left\{ \varnothing \right\} $ \\
+Породжене кільце $\mathcal{K}=\mathcal{K}(\mathcal{H})$\\
+$\mu^* \;-$ зовнішня міра, породжена мірою $\mu$ на $\mathcal{K}$\\
+$2^\RR \xrightarrow{\mu^*} [0; \; +\infty)$\\
+$S \;-$ $\sigma$-алгебра вимірних множин $(\sigma a(K) \subset S)$\\
+$\mu (\varnothing) = 0, \;\; \mu ([a; \;b)) = b-a$\\
+$\mu = \mu^*|_S \;-$ міра Лебега.\\
+$\mu \left(\displaystyle\bigsqcup\limits_{i = 1}^n [a_i; \; b_i)\right)=\Sum_{i=1}^{n}\mu \left([a_i; \; b_i)\right)$\\
+Тоді $S\;-$ клас вимірних множин за Лебегом. Клас $\mathcal{A}=\mathcal{A}(\mathcal{K})$ називають  \textcolor{NavyBlue}{\textbf{\textit{класом борельових множин}}}.\\
+Позначають $\mathscr{B}$        
+\end{definition}
+\newpage
+\centerline{\textbf{Приклади борельових множин}}
+  \begin{enumerate}
+        \item $[a; \;b) \in \mathscr{B}$
+        \item $(a; \;b) = \displaystyle\bigcup\limits_{i = 1}^{\infty} [a + \dfrac{1}{i}; \; b) \in \mathscr{B}$
+        \item $\left\{ a \right\} = [a; \;b) \setminus (a; \; b) \in \mathscr{B}$
+        \item $(a; \;b] = (a; \;b) \cup  \left\{ b \right\} \in \mathscr{B}$
+        \item  $A\;-$ відкрита множина,  $A = \displaystyle\bigcup\limits_{i = 1}^{\infty} (a_i; \; b_i) \in \mathscr{B}$
+        \item  $A\;-$ замкнена множина,  $A = \mathbb{R} \setminus B \in \mathscr{B} \;\; (B\;- $ відкрита $)$
+        \item $K_3\;-$ множина Кантора (замкнена), $K_3 \in \mathscr{B}$
+        \item $A \; - $ зліченна множина,  $A =\displaystyle\bigcup\limits_{i = 1}^{\infty} \left\{a_i \right\} \in \mathscr{B}$ 
+    \end{enumerate}
+\centerline{\textbf{Схема поширення міри}} 
+\begin{enumerate}
+    \item Визначаємо міру $\mu$ на півкільці $\mathcal{H}$
+    \item Продовжуємо $\mu$ на породжене кільце
+$\mathcal{K}=\mathcal{K}(\mathcal{H})$
+\item Будуємо $\mu^*\;-$ зовнішня міра, породженна $\mu$
+    \item Звужуємо $\mu^*$ на клас вимірних множин $S$, де $\mu^*$ стає мірою на $S$
+\end{enumerate}
+    
+\subsection{\large{Інтеграл Лебега}}
+
+
+\begin{definition}
+        Нехай $y = f(x) \: -$ обмежена функція та існують міри множин $\{x \, | \; y_i \, \leqslant f(x) < y_{i+1} \}$. \newline
+        Тоді $s = \Sum_{i=0}^{n-1} y_i \, \mu\left(\{x \, | \; y_i \leqslant f(x) < y_{i+1} \}\right)$ називають \textcolor{NavyBlue}{\textbf{\textit{нижньою сумою Лебега}}}.
+\end{definition}
+
+
+\begin{definition}
+        Нехай $y = f(x) \: -$ обмежена функція та існують міри множин $\{x \, | \; y_i \, \leqslant f(x) < y_{i+1} \}$. \newline
+        Тоді $S = \Sum_{i=0}^{n-1} y_{i+1} \, \mu\left(\{x \, | \; y_i \leqslant f(x) < y_{i+1} \}\right)$ називають \textcolor{NavyBlue}{\textbf{\textit{верхньою сумою Лебега}}}.
+\end{definition} 
+
+Ключова властивість сум Лебега:
+0 \leqslant S - s = \Sum_{i=0}^{n-1} (y_{i+1}-y_i) \, \mu\left(\{x \, | \; y_i \leqslant f(x) < y_{i+1} \}\right) \leqslant d\,\Sum_{i=0}^{n-1} \mu\left(\{x \, | \; y_i \leqslant f(x) < y_{i+1} \}\right)=\]  
+\[=d  \mu\left(\displaystyle\bigsqcup\limits_{i = 0}^{n-1}  \{x \, | \; y_i \leqslant f(x) < y_{i+1} \}\right) = d\mu([a;\:b]) \xrightarrow[d\to0]{}0, \;\; d = \max_i(y_{i+1}-y_i}) \]
+
+
+\subsection{\large{Вимірні функції}}
+
+
+\begin{definition}
+        \textcolor{NavyBlue}{\textbf{\textit{Функція}}} $f: \RR \to \RR$ називається \textcolor{NavyBlue}{\textbf{\textit{вимірною (вимірною за Лебегом)}}}, якщо \newline $\forall a \in \RR$ множина $\{f < a\}$ вимірна за Лебегом. 
+\end{definition}
+
+
+\begin{definition}
+        Кажуть, що якась \textcolor{NavyBlue}{\textbf{\textit{властивість}}} (рівність або нерівність) \textcolor{NavyBlue}{\textbf{\textit{виконується майже скрізь}}}, якщо множина тих значень, для яких вона не виконується, є множиною Лебегової міри нуль.
+\end{definition}
+\begin{theorem}
+  Нехай $f: \RR \rightarrow \RR \;-$ вимірна функція, $k\;-$ стала. Тоді
+  \begin{enumerate}
+      \item $f + k$
+      \item $fk$
+      \item $|f|}$
+      \item $f^2$
+      \item $\dfrac{1}{f}$
+  \end{enumerate}
+  є вимірними.
+ \newpage
+\end{theorem}
+\textcolor{NavyBlue}{\textbf{\textit{Зауваження!}}} Якщо $f: \RR \rightarrow \RR \;-$ вимірна функція, то $\forall a \in \RR$ множини
+  \begin{enumerate}
+      \item $\left\{ f<a \right\}$
+      \item $\left\{ f>a \right\}$
+      \item $\left\{ f \leqslant a \right\} = \overline{\left\{ f>a \right\}}= \displaystyle\bigcap\limits_{m = 1}^{\infty} \left\{ f<a+\dfrac{1}{m} \right\} $
+      \item $\left\{ f \geqslant a \right\}$
+  \end{enumerate}
+є вимірними. І навпаки, якщо, наприклад, $\forall a \left\{ f \leqslant a \right\} \;-$ вимірна множина, то $f \;-$ вимірна функція. \\
+Справді, $\left\{ f<a \right\} =\displaystyle\bigcup\limits_{m = 1}^{\infty} \left\{ f \leqslant a-\dfrac{1}{m} \right\} $
+
+\begin{theorem}
+   Нехай $f: \RR \rightarrow \RR,\; g: \RR \rightarrow \RR \;-$ вимірні функції. Тоді
+   \begin{enumerate}
+       \item $f \pm g$
+       \item $f \cdot g$
+       \item $\dfrac{f}{g}$
+   \end{enumerate}
+  є вимірними функціями.
+\end{theorem}

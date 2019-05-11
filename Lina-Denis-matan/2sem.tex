@@ -1,0 +1,176 @@
+\section{\Large{Поняття інтеграла}}
+\subsection{\large{Інтеграл Ньютона-Лейбніца}}
+
+
+\begin{definition}
+    Нехай $f(x):[a;\:b]\to\mathbb{R}$, тоді функцію $F$ називають                     \textcolor{NavyBlue}{\textbf{\textit{інтегралом Ньютона-Лейбніца}}} функції $f(x)$ на $[a;\:b]$, якщо 
+    \begin{enumerate}
+        \item $F(a) = 0$
+        \item $F'(x) = f(x) \;\; \forall x \in [a; \: b]$
+    \end{enumerate}
+    Позначають: $F(x) = \Int_a^x f(t) \mathrm{d}t$ \\
+\end{definition}
+
+
+\subsection{\large{Інтеграл Рімана}}
+\begin{definition}
+    Набір $P = \{ x_0,\: x_1, \ldots, \: x_n \},\:$ де $a = x_0, \; b = x_n, \; x_i < x_{i + 1}$ називається \textcolor{NavyBlue}{\textbf{\textit{розбиттям відрізка}}} $[a;\:b]$.\\
+\end{definition}
+
+
+\begin{definition}
+    Величину $d_P = \Max_{i = \overline{0, n - 1}} (x_{i + 1} - x_i)$ називають \textcolor{NavyBlue}{\textbf{\textit{діаметром розбиття}}} $[a;\:b]$. \\
+\end{definition}
+
+
+\begin{definition}
+    Нехай є точка $\xi_i $ з проміжку $ [x_i;\:x_{i + 1})$, \textcolor{NavyBlue}{\textbf{\textit{інтегральною сумою Рімана}}} називають \\
+    \[ S(P,\: \xi) = \Sum_{i=0}^{n-1} f(\xi_i) (x_{i+1} - x_i) = \Sum_{i=0}^{n-1} f(\xi_i) \Delta x_i \]
+\end{definition}
+
+
+\begin{definition}
+    Число $I \in \RR$ називають \textcolor{NavyBlue}{\textbf{\textit{інтегралом Рімана функції}}} $f(x)$ на $[a;\:b]$, якщо
+    \[ \forall \varepsilon>0\ \exists\delta>0 \ \forall P \ \forall\xi_i: \ d_P<\delta \Rightarrow \left| S(P,\:\xi) \right| <\varepsilon \]
+\end{definition}
+
+
+\subsection{\large{Інтеграл Дарбу}}
+
+
+\begin{definition}
+    Нехай $f(x)$ визначена та обмежена функція на $[a;\:b].$ \newline Суму $\underline{S}_P(f) = \Sum_{i=0}^{n-1} m_i\: \Delta x_i$\text{, де } $m_i = \underset{{x\in [x_i;\: x_{i+1}]}}{\inf} f(x)$ називають \textcolor{NavyBlue}{\textbf{\textit{нижньою сумою Дарбу}}}. \\
+\end{definition}
+
+
+\begin{definition}
+    Нехай $f(x)$ визначена та обмежена функція на $[a;\:b].$ \newline
+    Суму $\overline{S}_P(f) = \Sum_{i=0}^{n-1} M_i\:\Delta x_i$ , де $ M_i = \underset{{x\in [x_i;\: x_{i+1}]}}{\sup} f(x)$ називають \textcolor{NavyBlue}{\textbf{\textit{верхньою сумою Дарбу}}}. \\
+\end{definition}
+
+
+\begin{definition}
+    Величину $\underline{S}_P(f)$ називають \textcolor{NavyBlue}{\textbf{\textit{нижнім інтегралом Дарбу}}} і позначають $\underline{\Int_a^b} f(x) \,\mathrm{d} x$. \\
+\end{definition}
+
+
+\begin{definition}
+    Величину $\overline{S}_P(f)$ називають \textcolor{NavyBlue}{\textbf{\textit{верхнім інтегралом Дарбу}}} і позначають $\overline{\Int_a^b} f(x) \,\mathrm{d} x$. \\
+\end{definition}
+
+
+\subsection{\large{властивості сум Дарбу}}
+
+\begin{definition}
+    Нехай $P_1$ і $P_2 \: -$ деякі розбиття відрізка $[a;\:b]$. Кажуть, що $P_2\: -$  \textcolor{NavyBlue}{\textbf{\textit{продовження розбиття}}} $P_1$, якщо $P_1 \subset P_2$.
+\end{definition}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{властивості сум Дарбу}}}]
+\end{theorem}
+    \begin{enumerate}
+        \item $\underline{S}_P(f) \leqslant \overline{S}_P(f)$
+        \item Нехай $P_2\: -$  продовження розбиття $P_1$, тоді
+        \begin{enumerate}
+            \item $\underline{S}_{P_1}(f) \leqslant \underline{S}_{P_2}(f)$
+            \item $\overline{S}_{P_1}(f) \geqslant \overline{S}_{P_2}(f)$
+    \end{enumerate}
+    \item $\forall P_1,\: P_2$: $\ \underline{S}_{P_1}(f) \leqslant \overline{S}_{P_2}(f)$
+    \end{enumerate}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{критерій інтегровності за Дарбу}}}]
+    Нехай $f(x) \: -$ обмежена на $[a;\:b]$ функція. \newline Тоді $f(x)$ інтегровна за Дабру $\iff$  $\forall \varepsilon > 0 \ \exists P: \ \overline{S}_P(f) - \underline{S}_P(f) \leqslant \varepsilon$
+\end{theorem}
+\textcolor{Maroon}{\textbf{\textit{{Наслідок.}}}} Обмежена функція $f$ інтегровна за Дарбу $\iff$ інтегровна за Ріманом.
+
+
+\subsection{\large{Властивості інтеграла Рімна}}
+
+
+\begin{definition}
+    Множину $M\subset \RR$ називають \textcolor{NavyBlue}{\textbf{\textit{множиною Лебегової міри нуль}}},\newline якщо $\forall \varepsilon > 0$ існує послідовність відрізків $I_n,\: n \in \NN$, не виключаючи порожню множину, що
+    \begin{enumerate}
+        \item $M\subset \bigcup\limits_{n=1}^\infty I_n$
+        \item сумарна довжина $I \leqslant  \varepsilon \text{, тобто} \Sum_{n=1}^\infty \mu (I_n)\leqslant \varepsilon$, де $I_n = [a_n;\: b_n]$, $\mu(I_n)=b_n-a_n$
+    \end{enumerate}
+\end{definition}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{Рімана (критерій інтегровності за Ріманом)}}}]
+    Нехай $f(x)$ -- обмежена на $[a;\:b]$ функція. Тоді $f(x)$ інтегровна за Ріманом $\iff$ множина її точок  розриву має Лебегову міру нуль.
+\end{theorem}
+\textcolor{Maroon}{\textbf{\textit{{Наслідок.}}}}  Нехай $f(x)$ і $g(x)$ інтегровні за Ріманом на $[a;\:b]$ функції, тоді $f(x) \pm g(x)$, $f(x) \cdot g(x)$ інтегровні за Ріманом на $[a;\:b]$ функції.
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{лінійність інтеграла Рімана}}}]
+    Нехай $f(x)$ і $g(x)$ -- функції, інтегровні за Ріманом на $[a;\:b]$, тоді
+    \begin{enumerate}
+        \item $ \Int_a^b (f+g) \,\mathrm{d} x = \Int_a^b f \,\mathrm{d} x + \Int_a^b g \,\mathrm{d} x $
+        \item $ \Int_a^b c f \,\mathrm{d} x = c \Int_a^b f \,\mathrm{d} x $
+    \end{enumerate}
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{адитивність інтеграла Рімана відносно області інтегрування}}}]
+    Нехай $f(x) $ -- функція, інтегровна за Ріманом на $[a;\:b]$, тоді
+    $ \forall c \in [a;\:b]: \ \exists \Int_a^c f(x) \,\mathrm{d} x,\: \Int_c^b f(x) \,\mathrm{d} x \text{, що}  \Int_a^b f(x) \,\mathrm{d} x = \Int_a^c f(x) \,\mathrm{d} x + \Int_c^b f(x) \,\mathrm{d} x $
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{монотонність інтеграла Рімана}}}]
+    Нехай $f(x)$ і $g(x)$ -- функції, інтегровні за Ріманом на $[a;\:b]$ i $\forall x \in [a;\:b] :$ $f(x) \leqslant g(x)$. Тоді $\Int_a^{b}f(x) \,\mathrm{d} x \leqslant \Int_a^b g(x) \,\mathrm{d} x$
+\end{theorem}
+\textcolor{Maroon}{\textbf{\textit{{Наслідки.}}}}
+\begin{enumerate}
+    \item Якщо $f(x)\geqslant 0$, то $\Int_{a}^{b}f \,\mathrm{d} x \geqslant 0 $
+    \item Якщо $ m \leqslant f(x) \leqslant M\ \forall x \in [a;\:b]$, то  $m(b-a) \leqslant \Int_a^b f         \,\mathrm{d} x \leqslant M(b-a)$    
+    \item $\left | \Int_{a}^{b}f(x)\,\mathrm{d} x \right |\leqslant \Int_{a}^{b}\left | f(x) \right | \,\mathrm{d}     x$
+\end{enumerate}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{неперервність інтеграла Рімана зі змінною верхнею межею}}}]
+    Нехай $f(x) $ -- інтегровна за Ріманом на $[a;\:b]$ функція, тоді $F_r(t)=(R)\Int_{a}^{t}f(x)\,\mathrm{d} x, \ t \in (a;\:b]$ є непепервною на $[a;\:b]$.
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{диференційовність інтеграла Рімана зі змінною  верхнею межею}}}]
+    Нехай $f(x)$ -- функція, інтегровна за Ріманом на  $[a;\:b]$, тоді $ F_r(t)=\Int_{a}^{t}f(x)\,\mathrm{d} x,\: t \in (a;\:b]$ є диференційовною в усіх точках $t_0 \in (a;\:b]$, де функція $f(x)$ є неперервною.
+\end{theorem}
+
+
+\textcolor{Maroon}{\textbf{\textit{{Наслідки.}}}}
+\begin{enumerate}
+    \item Будь-яка неперервна на відрізку функція має первісну
+    \item $f \:-$ неперервна на відрізку функція, тоді $\ (N\text{-}L)\Int_{a}^{b}f(x)\,\mathrm{d} x = (R)\Int_{a}^{b}f(x)\,\mathrm{d} x$
+\end{enumerate}
+
+
+\begin{theorem}
+    Нехай $g(x) $ -- інтегровна за Ріманом на $[a;\:b]$ функція i $ m \leqslant g(x) \leqslant M $. Тоді $\exists \mu \in [m;\:M]$, що $\Int_a^b g(x)\,\mathrm{d} x = \mu(b-a),\ $  а якщо $g(x)\:- $  неперервна функція, то $\exists \xi \in [a;\:b]: \ \Int_a^b g(x)\,\mathrm{d} x=g(\xi )(b-a)$
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про середнє}}}]
+    Нехай $f(x)$ і $g(x)\: -$ функції, інтегровні за Ріманом на  $[a;\:b]$.\newline Якщо $f(x)\geqslant 0$ на $[a;\:b]$ і $ m\leqslant g(x)\leqslant M \text{, то } \exists \mu \in [m;\:M]$, що виконується
+    $\Int_a^b f(x)g(x)\,\mathrm{d} x= \mu \Int_a^b f(x)\,\mathrm{d} x$
+    \newline Крім цього, якщо $g(x)\: - $  неперевна функція, то $\exists \xi \in [a;\:b] \text{, що } \mu=g(\xi).$
+\end{theorem}
+
+
+\subsection{\large{Застосування Інтеграла Рімана}}
+
+
+\begin{definition}
+    Функцію виду $[a;\:b]\overset{F}{\rightarrow}\RR$ називають \textcolor{NavyBlue}{\textbf{\textit{функцією проміжку}}}.
+\end{definition}
+
+
+\begin{definition}
+    Функцію проміжку F називають \textcolor{NavyBlue}{\textbf{\textit{адитивною}}}, якщо $\forall a< c< b$ виконується \[F([a;\:b])=F([a;\:c])+F([c;\:b])\]
+\end{definition}
+
+
+\begin{theorem}
+    Нехай $F $ -- адитивна функція проміжку та існує $f$, інтегровна за Ріманом на $[a;\:b]$, так що \[ \forall [\alpha ;\:\beta ]\subset [a;\:b]: \ m(\beta -\alpha) \leqslant F([\alpha ;\:\beta ])\leqslant M(\beta -\alpha) \text{, де } m=\underset{{x\in [\alpha\: \beta]}}{\inf} F(x),\ M=\underset{{x\in [\alpha\: \beta]}}{\sup} F(x)\] \[\text{Тоді } F([a;\:b])=(R)\Int_a^b f(x)\,\mathrm{d} x \]
+\end{theorem}

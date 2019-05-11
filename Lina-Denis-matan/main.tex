@@ -1,0 +1,1220 @@
+\input{univ.sty}
+
+\date{}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{esvect}
+
+
+\addto\captionsenglish{
+    \renewcommand*\contentsname{Summary}
+}
+
+\begin{document}
+\begin{titlepage}
+\newpage
+
+\begin{center}
+ \large{\textbf{ОСНОВНІ ВИЗНАЧЕННЯ ТА ТЕОРЕМИ З КУРСУ МАТЕМАТИЧНОГО АНАЛІЗУ ДЛЯ СТУДЕНТІВ ФАКУЛЬТЕТУ КОМП'ЮТЕРНИХ НАУК ТА КІБЕРНЕТИКИ КИЇВСЬКОГО НАЦІОНАЛЬНОГО УНІВЕРСИТЕТУ ІМЕНІ ТАРАСА ШЕВЧЕНКА}} \\
+\end{center}
+
+\vspace{8em}
+
+\begin{center}
+\large{Посібник з підготовки до модуля за одну ніч `\tt{:)}}
+\end{center}
+
+\vspace{5em}
+\begin{center}
+\large{НА ОСНОВІ ЛЕКЦІЙНОГО МАТЕРІАЛУ НОМІРОВСЬКОГО Д. А.} \\ 
+\end{center}
+\begin{center}
+
+\vspace{8em}
+
+\includegraphics[origin = 10]{images}
+\end{center}
+
+\vspace{10em}
+
+\begin{flushright}
+Виконали студенти групи К-23 
+
+{\textbf{\textit{Логвіна А.В.}}} та {\textbf{\textit{Калюжний Д.В.}}}
+\end{flushright}
+
+\vspace{\fill}
+
+\begin{center}
+Київ \\2018
+\end{center}
+
+\end{titlepage}
+\tableofcontents
+
+\newpage
+\section{\Large{Вступ}}
+
+\subsection{\large{Відношення та функції}}
+
+\begin{definition} 
+    Нехай $X, Y \: -$ множини. \textcolor{NavyBlue}{\textbf{\textit{Декартовим добутком}}} $X \times Y$ називають множину усiх упорядкованих пар $(x; \: y)$, де $x \in X$ та $y \in Y.$
+\end{definition}
+
+\begin{definition} 
+    Нехай $X \times Y \: -$ декартів добуток, $\Gamma\subset X \times Y$. Тоді $\Gamma$ називають \textcolor{NavyBlue}{\textbf{\textit{відношенням між \newline множинами}}} X i Y. 
+\end{definition}
+
+\begin{definition} 
+        Нехай $\Gamma\subset X \times Y \: - $ відношення. Відношення $\Gamma$ називають \textcolor{NavyBlue}{\textbf{\textit{функціональним (функція)}}}, якщо $(x; \: y_1) \in \Gamma \wedge  (x; \: y_2) \in \Gamma \Rightarrow y_1 = y_2$.
+\end{definition}
+
+\begin{definition} 
+        Нехай $\Gamma\subset X \times Y$ - відношення. Тоді відношення $\Gamma^{-1} = \left \{(y; \: x)|\:(x ; \: y) \in \Gamma \right \} \subset Y \times X$ \textcolor{NavyBlue}{\textbf{\textit{обернене}}} до відношення $\Gamma$.
+\end{definition}
+
+\begin{definition} 
+        Нехай $\Gamma\subset X \times Y \: -$ функціональне відношення. Якщо $\Gamma^{-1}\subset Y \times X$ також є функціональним, то його $(\Gamma^{-1})$ називають \textcolor{NavyBlue}{\textbf{\textit{оберненою функцією}}} до функції $\Gamma$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{Кантора}}}]
+       Нехай $[a_1; \: b_1] \supset  [a_2; \: b_2] \supset...\supset[a_n; \: b_n] \supset ... ; \; a_i, \: b_i \in \mathbb{R}$. Тоді $\exists x \in \mathbb{R}: \ \forall i \in \mathbb{N} \; x \in [a_i; \: b_i]$. 
+\end{theorem}
+
+\begin{theorem}
+    Дійсні числа відрізку  $[0; \: 1]$  не можна перелічити.
+\end{theorem}
+
+\subsection{\large{Топологія дійсних чисел}}
+
+\begin{definition} 
+        \textcolor{NavyBlue}{\textbf{\textit{Топологія}}}$ \: -$ сукупність всіх відкритих множин.
+\end{definition}
+
+\begin{definition} 
+        Нехай $x_0 \in \mathbb{R},\: \varepsilon \in \mathbb{R}, \: \varepsilon > 0$. Множину $(x_0 - \varepsilon; \: x_0 + \varepsilon)$ називають \textcolor{NavyBlue}{\textbf{\textit{$\varepsilon$-околом точки}}} $x_0$.
+\end{definition}
+
+\begin{definition} 
+        Нехай $x_0 \in \mathbb{R}$.\; Мн.  $M \subset \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{околом точки}}} $x_0$, якщо $\exists \varepsilon > 0$, що $(x_0 - \varepsilon; \: x_0 + \varepsilon) \subset M$.
+\end{definition}
+
+
+
+\begin{definition} 
+       Нехай $M \subset \mathbb{R}$. Множина $M$ називається \textcolor{NavyBlue}{\textbf{\textit{відкритою}}}, якщо вона є околом кожної своєї точки.
+\end{definition}
+
+\begin{definition} 
+       Нехай $M \subset \mathbb{R}$. Сукупність всіх внутрішніх точок множини $M$ називають \textcolor{NavyBlue}{\textbf{\textit{внутрішністю}}}\;$M$ і позначають $intM$.
+\end{definition}
+
+\begin{definition} 
+       Нехай $x_0 \in \mathbb{R},\: M \subset \mathbb{R} $. Кажуть, що $x_0 \: -$  \textcolor{NavyBlue}{\textbf{\textit{точка дотику множини}}} $M$, якщо у будь-якому околі точки $x_0$ є елементи множини $M$.
+\end{definition}
+
+\begin{definition} 
+       Множину $M \subset \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{замкненою}}}, якщо вона містить всі свої точки дотику.
+\end{definition}
+
+\begin{definition} 
+       Нехай $M \subset \mathbb{R}$. Сукупність всіх точок дотику множини $M$ називають \textcolor{NavyBlue}{\textbf{\textit{замиканням}}}\;$M$ \newline і позначають $clM$.
+\end{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\Large{Послідовності}}
+\subsection{\large{Границя числової послідовності}} 
+\begin{definition} 
+        Функцію $\mathbb{N} \xrightarrow[\text{}]{\text{f}}
+        \mathbb{R} $ називають \textcolor{NavyBlue}{\textbf{\textit{числовою послідовністю}}}.
+\end{definition}
+\begin{definition}[топологічне]
+        Число $a \in \mathbb{R}$ називається \textcolor{NavyBlue}{\textbf{\textit{границею послідовності}}} $x_n$, якщо\newline  будь-який окіл точки $a$ містить всі члени послідовності $x_n$, окрім, можливо, скінченної кількості.
+\end{definition}
+
+\begin{definition}[кванторне]
+        Число $a \in \mathbb{R}$ називається \textcolor{NavyBlue}{\textbf{\textit{границею послідовності}}} $x_n$, якщо  \newline \;  $\forall \varepsilon > 0 \; \; \exists N: \ \forall n > N \; \; \left| x_n - a \right| < \varepsilon$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про єдиність границі}}}]
+        Нехай $x_n \to a$, $x_n \to b$. Тоді $a = b$.  
+\end{theorem}
+
+\begin{definition} 
+       Послідовність $x_n$ називають \textcolor{NavyBlue}{\textbf{\textit{обмеженою}}}, якщо існують сталі $c_1$ та $c_2$, що   $\forall n \in \mathbb{N}$  $c_1 < x_n < c_2$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{необхідна умова збіжності}}}]
+        Якщо $x_n \: -$ збіжна послідовність, то $x_n \: -$ обмежена.  
+\end{theorem}
+
+\begin{theorem}
+        Нехай $x_n \to a, \; y_n \to b\:$  та  $\:x_n \leqslant  \: y_n$  $\forall n \in \mathbb{N}$. Тоді $a\leqslant \:b$.
+\end{theorem}
+
+\begin{theorem}
+        Нехай $x_n \to a, \; y_n \to b\:$  та
+        $a < \: b$. Тоді  $x_n <  \: y_n$  $\forall n \geqslant N_0$.  
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про двох поліцаїв}}}]
+        Нехай $x_n,\; y_n,\; z_n \: -$ послідовності та $x_n \leqslant  y_n \leqslant  z_n \;\: \forall n \in \mathbb{N}$. \newline Якщо $x_n \to a$ і $z_n \to a$, то $y_n$ є збіжною і $y_n \to a$.
+\end{theorem}
+\subsection{\large{Символи Ландау}}
+\begin{definition} 
+       Якщо $x_n \to 0$, то пишуть $x_n = o(1)$. Приклад: $\dfrac{1}{n} = o(1)$, але  $o(1) \neq \dfrac{1}{n}$.
+       \end{definition}
+ \begin{definition}       
+       Якщо $x_n -$ обмежена посл., то пишуть $x_n = O(1)$. Приклад: $(-1)^{n} = O(1)$, але $O(1) \neq (-1)^{n}$.
+       \end{definition}
+       Властивості:
+       \begin{enumerate}
+           \item $o(1) + o(1) = o(1)$
+           \item $O(1) + O(1) = O(1)$
+           \item $o(1) + O(1) = O(1)$
+           \item $o(1) \cdot o(1) = o(1)$
+           \item $o(1) \cdot O(1) = o(1)$
+           \item $O(1) \cdot O(1) = O(1)$
+       \end{enumerate}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про структуру збіжних послідовностей}}}]
+        Послідовність $x_n \to a$ $\iff$ її можна подати у вигляді $x_n = a + o(1)$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про арифметичні дії зі збіжними послідовностями}}}}}]
+        Нехай $x_n$, $\:y_n -$ збіжні. $x_n \to a$, $y_n \to b$. Тоді послідовності $x_n \pm y_n$, $x_n \cdot y_n$, $\dfrac{x_n}{y_n} \; (y_n \neq 0, \; b \neq 0) $ будуть також збіжні та
+         \begin{enumerate}
+        \item $x_n \pm y_n \to a \pm b$
+        \item $x_n \cdot y_n \to a \cdot b$
+        \item $\dfrac{x_n}{y_n} \to \dfrac{a}{b}$
+         \end{enumerate}
+\end{theorem}
+\subsection{\large{Теорема Вейєрштраcса та число $e$}}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Вейєрштрасса}}}}}]
+        Нехай $x_n \: -$ монотонна і обмежена послідовність, тоді вона є збіжною.
+\end{theorem}
+
+\begin{definition} 
+       Нехай $M \subset \mathbb{R}$. Число $a$ називають \textcolor{NavyBlue}{{\textbf{\textit{супремумом множини}}}} $M$, якщо
+        \begin{enumerate}
+       \item  $\forall x \in M \ x \leqslant  a$ ($a \:- $ мажоранта множини $M$)
+       \item  $\forall b < a \ \exists x \in M: x > b $ ($a \:- $ найменша з мажорант множини
+       $M$)
+        \end{enumerate}
+\end{definition}
+
+\begin{definition} 
+       Нехай $M \subset \mathbb{R}$. Число $a$ називають \textcolor{NavyBlue}{\textbf{\textit{{інфінумом}}}} множини $M$, якщо
+        \begin{enumerate}
+       \item  $\forall x \in M \ x \geqslant  a$ ($a \:- $ міноранта множини $M$)
+       \item  $\forall b > a \ \exists x \in M: x < b $ ($a \:- $ найбільша з мінорант множини $M$)
+        \end{enumerate}
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{повнота за Вейєрштрассом}}}}}]
+         Нехай $M \: - $ обмежена зверху множина, тоді існує супремум \newline множини $M$.
+\end{theorem}
+
+\begin{definition} 
+       Границею послідовності $x_n = \left(1 + \dfrac{1}{n}\right)^{n}$ називають числом \textcolor{NavyBlue}{\textbf{\textit{{e $\approx$ 2.718281828}}}}.
+\end{definition}
+
+\begin{definition} 
+       Будемо казати, що послідовність $x_n \in \mathbb{R}$ \textcolor{NavyBlue}{\textbf{\textit{{збігається до $+\infty$ в $\mathbb{\overline{R}}$}}}}, якщо \newline $\forall c > 0$  $\exists N$ $\forall n > N$ $x_n > c$.
+\end{definition}
+
+\subsection{\large{Підпослідовності}}
+\begin{definition} 
+       Нехай $x_n - $ послідовність. Викреслимо з $x_n$ декілька членів, наприклад \newline \centerline{$x_n: \; x_1, \; \not{x_2}, \; \not{x_3},\; x_4,\ \not{x_5},\; x_6,\; \not{x_7},\; x_8,\; x_9,\:...$.} Послідовність $y_n$ (утворена із членів, що залишились) називається \textcolor{NavyBlue}{\textbf{\textit{{підпослідовністю}}}} послідовності $x_n$. \newline Тобто $y_k = x_{n_k}$, де $n_k \: - $ строго зростаюча послідовність натуральних чисел. 
+\end{definition}
+
+\begin{theorem}[]
+         Якщо $x_n - $ збіжна послідовність, то будь-яка її підпослідовність $x_{n_k}$ також є збіжною \newline і $\Lim_{k \to \infty} x_{n_k} = \Lim_{n \to \infty} x_n$. АЛЕ! Обернене твердження місця не має.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Больцано-Вейєрштрасса}}}}}]
+         Будь-яка послідовність містить монотонну підпослідовність.
+         \item \textcolor{Maroon}{\textbf{\textit{{{Наслідок}}}}}: Будь-яка обмежена послідовність містить збіжну підпослідовність.
+\end{theorem}
+
+\begin{definition} 
+       Нехай $x_n -$ послідовність і $x_{n_k} -$ її збіжна підпослідовність, $x_{n_k} \to a$. Тоді число $a$ називають \textcolor{NavyBlue}{\textbf{\textit{{частковою границею}}}} послідовності $x_n$.
+\end{definition}
+
+\begin{definition}
+       Найбільшу часткову границю посл. $x_n$ називають \textcolor{NavyBlue}{\textbf{\textit{{верхньою границею}}}} і позначають {$\overline{\Lim_{n \to \infty}} x_n $.}
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{гармонічний ряд}}}}}]
+         $\Sum_{k=1}^n \dfrac{1}{k} = \ln{n} + c + o(1) \;$, де $c \approx 0.57 \: -  $ стала Ейлера. 
+\end{theorem}
+
+\begin{definition}
+         Послідовність $x_n$ називають \textcolor{NavyBlue}{\textbf{\textit{{фундаментальною}}}}, якщо $x_n - x_m \xrightarrow[n, m \to +\infty]{}0$, тобто \newline $\forall \varepsilon > 0 \ \exists N \  \forall n > N \ \forall m > N \ |x_n - x_m| < \varepsilon$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій Коші}}}}}]
+         Послідовність збіжна $\iff $ вона фундаментальна.
+\end{theorem}
+\subsection{\large{Теорема Штольца}}
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Тепліца}}}}}]
+         Нехай $x_n \to a \in \mathbb{\overline{R}}$. Якщо числа \newline
+\begin{equation}
+      \label{ep:1.1}
+      \begin{aligned}
+          p_{11} \\
+          p_{21} &, \ p_{22} \\
+          p_{31} &, \ p_{32} , \ p_{33} \\
+          p_{41} &, \ p_{42}  , \ p_{43} , \ p_{44} \\
+           & \ldots\ldots\ldots\ldots    
+        \end{aligned}
+    \end{equation}
+     задовольняють умови
+      \begin{enumerate}
+       \item $p_{ij} \geqslant  0$
+       \item $p_{k1} + p_{k2} + \ldots + p_{kk} = 1, \ k \in \mathbb{N}$
+       \item $\Lim_{k \to \infty} p_{kj} = 0, \ j \in \mathbb{N}$
+        \end{enumerate}
+        то послідовність $y_n = p_{n1}x_1 + p_{n2}x_2 + \ldots + p_{nn}x_n \to a$.
+         \item \textcolor{Maroon}{\textbf{\textit{{{\textbf{\textit{Наслідок}}}}}}}: Нехай $x_n, \; y_n -$ послідовності і $y_n > 0$,  \ $\Sum_{k=1}^n y_k \to +\infty$ в $\mathbb{\overline{R}}$. Якщо $\dfrac{x_n}{y_n} \to a$ в $\mathbb{\overline{R}}$, то \newline $z_n = \dfrac{x_1 \; + \; x_2 \; + \;  \ldots \; + \; x_n}{y_1 \; + \; y_2  \; + \; \ldots \; + \; y_n} \to a$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Штольца}}}}}]
+        Нехай $x_n$, $y_n \: -$ послідовності. Якщо
+        \begin{enumerate}
+            \item $y_n \: -$ строго зростаюча послідовність
+            \item $y_n \to +\infty$ в $\mathbb{\overline{R}}$
+            \item $\dfrac{x_n \;- \; x_{n-1}}{y_n \; - \; y_{n-1}} \to a$ в $\mathbb{\overline{R}}$
+        \end{enumerate}
+        Тоді $\dfrac{x_n}{y_n} \to a$.
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\Large{Функції}}
+
+\subsection{\large{Неперервні функції}}
+
+\begin{definition}[за Гейне]
+         Нехай $f \: -$ функція, $x_0 \in D_f$. Будемо казати, що $f$ є \textcolor{NavyBlue}{\textbf{\textit{{неперервною}}}} в точці $x_0$, якщо  $\forall x_n \in D_f:$ $x_n \to x_0 \Rightarrow  f(x_n) \to f(x_0).$
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про арифметичні дії з неперервними функціями}}}}}]
+       Нехай $f$ і $g \: -$ неперервні в точці $x_0$. \newline Тоді функції $f \pm g$, $f \cdot g$, $\dfrac{f}{g}$ $(g(x_0) \neq 0)$ є неперервними в точці $x_0.$ 
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про неперервність композиції неперервних функцій}}}}}]
+       Нехай $f \:-$ неперервна в точці $x_0$, \newline а $g \: - $ в точці $y_0 = f(x_0).$ Тоді $g \circ f \:-$ неперервна функція в точці $x_0$.
+\end{theorem}
+
+\begin{definition}[за Коші]
+      Функцію $f$ називають \textcolor{NavyBlue}{\textbf{\textit{{неперервною}}}} в точці $x_0 \in D_f$,  якщо \newline  $\forall \varepsilon > 0  \ \ \exists \delta > 0 \  \ \forall x \in D_f: \ |x - x_0| < \delta \Rightarrow |f(x) - f(x_0)| < \varepsilon.$          
+\end{definition}
+      
+\begin{definition}[за Гейне]
+      Нехай $f \: -$ функція, $x_0 \in D_f$. Будемо казати, що $f$ є \textcolor{NavyBlue}{\textbf{\textit{{неперервною справа}}}} в точці $x_0$, якщо  $\forall x_n \in D_f$, $x_n \geqslant  x_0$,  $x_n \to x_0 \Rightarrow  f(x_n) \to f(x_0).$      
+\end{definition}
+      
+\begin{definition}[за Коші]
+      Функцію $f$ називають \textcolor{NavyBlue}{\textbf{\textit{{неперервною зліва}}}} в точці $x_0 \in D_f$,  якщо \newline $\forall \varepsilon > 0  \ \ \exists \delta > 0 \  \ \forall x \in D_f: \ |x - x_0| < \delta$, $ x \leqslant  x_0 \Rightarrow |f(x) - f(x_0)| < \varepsilon.$          
+\end{definition}
+
+\begin{theorem}
+       Функція $f$ є неперервною в точці $x_0 \iff$ вона є неперервною справа і зліва в точці $x_0.$
+\end{theorem}
+
+\subsection{\large{Границя функції в точці}}
+
+\begin{definition}
+      Точку $x_0 \in \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{{граничною точкою множини}}}} $M$, якщо існує послідовність різних чисел $x_n \in M$, що $x_n \to x_0.$
+\end{definition}
+
+\begin{definition}[за Гейне]
+      Нехай $f \:- $ функція і $x_0 \:- $ гранична точка $D_f.$ Число $a \in \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{{границею функції}}}} $f$ в точці $x_0$, якщо  $\forall x_n \in D_f$, $x_n \neq x_0$, $x_n \to x_0 \Rightarrow f(x_n) \to a.$ Позначають $\Lim_{x \rightarrow x_0} f(x)=a$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про арифметичні дії з границями}}}]
+       Нехай $x_0 \:-$ гранична точка множини $D_f \cap D_g$ і $\Lim_{x \to x_0} f(x) = A$, $\Lim_{x \to x_0} g(x) = B$. Тоді існують границі
+       \begin{enumerate}
+           \item $\Lim_{x \to x_0} (f(x) \pm g(x)) = A \pm B$
+           \item $\Lim_{x \to x_0} (f(x) \cdot g(x)) = A \cdot B$
+           \item $\Lim_{x \to x_0} \dfrac{f(x)}{g(x)} = \dfrac{A}{B}$ \ \ ($B \neq 0$)
+       \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{\textbf{\textit{{{про двох поліцаїв}}}}}}}}}]
+       Нехай $x_0 \: -$ гранична точка $D_f \cap D_g \cap D_h$ і  $\forall x \in D_f \cap D_g \cap D_h$ виконується $f(x) \leqslant  g(x) \leqslant  h(x).$ Якщо $\exists \Lim_{x \to x_0} f(x) = \Lim_{x \to x_0} h(x) = A$, то $\exists  \Lim_{x \to x_0} g(x) = A.$
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{\textbf{\textit{{{про границю композиції функцій №1}}}}}}}}}]
+       Нехай $\Lim_{x \to x_0} g(x) = a$ і $f \: - $ неперервна функція в точці $a$. Якщо $x_0 \: - $ гранична точка $D_{f \circ g}$, то $\Lim_{x \to x_0}f(g(x)) = f(a).$
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{\textbf{\textit{{{про границю композиції функцій №2}}}}}}}}}]
+      Нехай $x_0 \: - $ гранична точка $D_{f \circ g}$. Якщо
+      \begin{enumerate}
+            \item $\Lim_{x \to x_0} g(x) = a$
+            \item $\Lim_{t \to a} f(t) = b$
+            \item $\exists \ O(x_0)$, що  $\forall \: x \in O(x_0) \setminus \left \{ x_0 \right \}: \ x \in D_g \Rightarrow g(x) \neq a$
+      \end{enumerate}
+      Тоді $\exists \Lim_{x \to x_0} f(g(x)) = b$.
+
+\end{theorem}
+\subsection{\large{Невласні та односторонні границі}}
+\begin{definition}[за Гейне] 
+        Нехай $x_0 \: - $ гранична точка $D_f$. Кажуть, що функція $f$ має \textcolor{NavyBlue}{\textbf{\textit{{границю рівну $+\infty$ }}}}в точці $x_0$ в $\mathbb{\overline{R}}$, якщо  $\forall x_n \in D_f$: $x_n \to x_0,\; x_n \neq x_0 \Rightarrow f(x_n) \to +\infty$ 
+        в $\mathbb{\overline{R}}$. Позначають $\Lim_{x \to x_0} f(x) = +\infty.$
+\end{definition}
+
+\begin{definition}[за Гейне] 
+        Нехай існує $x_n \in D_f: x_n \rightarrow -\infty$ в $\mathbb{\overline{R}}$. Кажуть, що число $a$ є \textcolor{NavyBlue}{\textbf{\textit{{границею функції $f$ \newline  на $-\infty$}}}}, якщо  $\forall x_n \in D_f: \; x_n \to -\infty$ в $\mathbb{\overline{R}} \Rightarrow f(x_n) \to a$. Позначають $\Lim_{x \to -\infty} f(x) = a.$
+\end{definition}
+
+\begin{definition}[за Гейне] 
+        Нехай $x_0 \: - $ гранична точка $D_f \cap (x_0; \: +\infty)$. Число $a \in \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{{границею функції}}}} $f$ \textcolor{NavyBlue}{\textbf{\textit{{справа}}}} в точці $x_0$, якщо  $\forall x_n \in D_f$: $x_n > x_0$, $x_n \to x_0 \Rightarrow f(x_n) \to a.$ Позначають $\Lim_{x \to x_0^{+}} f(x) = a$.
+\end{definition}
+
+\begin{theorem}
+        Нехай $x_0 \: - $ гранична точка $D_f$. Тоді функція $f$ є неперервною в точці $x_0 \iff \Lim_{x \to x_0}f(x) = f(x_0)$.
+\end{theorem}
+
+\begin{definition}[за Коші]
+         Нехай $x_0 \: - $ гранична точка $D_f$. Число $a \in \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{{границею функції}}}} $f$ в точці $x_0$, якщо  $\forall \varepsilon > 0 \ \ \exists \delta > 0: \ \forall x \in D_f: \; 0 < |x - x_0| < \delta \Rightarrow |f(x) - a| < \varepsilon$.    
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{критерій Коші}}}]
+        Нехай $x_0 \: - $ гранична точка $D_f$. \newline Тоді $f$ має границю в точці $x_0 \iff$  $\forall \varepsilon > 0 \ \exists \delta > 0 \ \: \forall x_1, x_2 \in D_f:$ 
+        \begin{cases} 0 < |x_1 - x_0| < \delta  \\ 0 < |x_2 - x_0| < \delta  \end{cases} $\Rightarrow \ |f(x_1) - f(x_2)| < \varepsilon $.
+\end{theorem}
+
+
+\subsection{\large{Точки розриву функції}}
+
+\begin{definition}
+        Нехай $x_0 \: - $ гранична точка $D_f$ і рівність $\Lim_{x \to x_0}f(x) = f(x_0)$ не виконується ($f$ не є неперервною в точці $x_0$). Тоді кажуть, що $x_0 \: - $  \textcolor{NavyBlue}{\textbf{\textit{точка розриву}}} функцї $f$.   
+\end{definition}
+
+\begin{definition}
+        Нехай $x_0 \: -$ точка розриву функції $f$ і $\exists \Lim_{x \to x_0} f(x)$. Тоді $x_0$ називають \textcolor{NavyBlue}{\textbf{\textit{{точкою усувного розриву}}}}.
+\end{definition}
+
+\begin{definition}
+         Нехай $x_0 \: -$ точка розриву функції $f$ та існують $\Lim_{x \to x_0^{+}}f(x) \neq \Lim_{x \to x_0^{-}}f(x)$. Тоді $x_0$ називають \textcolor{NavyBlue}{\textbf{\textit{точкою розриву першого роду.}}}
+\end{definition}
+
+\begin{definition}
+         Всі інші точки розриву називать \textcolor{NavyBlue}{\textbf{\textit{{точками розриву другого роду}}}}.
+\end{definition}
+
+\begin{theorem}
+       Функція $f$ має границю в точці $x_0$, що дорівнює числу $a \iff f = a + o(1).$      
+\end{theorem}
+
+\subsection{\large{Властивості неперервних функцій}} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про корінь неперервної функції}}}}}]
+       Нехай $f \in C([a; \: b])$ та $f(a) f(b) \leqslant  0$. Тоді існує таке число $\xi \in [a; \: b]$, що $f(\xi) = 0$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про проміжне значення неперервної функції}}}}}]
+       Нехай $f\in C([a ; \: b])$, тоді $\forall l$ між числами \newline $f(a)$ і $f(b)$ існує число $\xi \in [a; \: b]$, що $f(\xi) = l$.
+\end{theorem}
+
+\begin{definition}
+       Множину $K \subset \mathbb{R}$ називають \textcolor{NavyBlue}{\textbf{\textit{{компактом}}}}, якщо  $\forall x_n \in K  \ \: \exists x_{n_k}$, яка збігається до $x_0 \in K$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій компактності}}}}}]
+       Множина $K \subset \mathbb{R}$ є компактом $\iff$ вона замкнена і обмежена.
+\end{theorem}
+        
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про неперервний образ компакту}}}]
+       Нехай $K \: -$ компакт, а функція $f \in C(K) \Rightarrow$ множина $f(K)$ також компакт.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{Вейєрштрасса}}}]
+       Будь-яка неперервна на компакті функція досягає свого максимуму та мінімуму. Як \textcolor{Maroon}{\textbf{\textit{{{наслідок}}}}} $-$ неперервна функція обмежена на компакті.
+\end{theorem}
+
+\subsection{\large{Рівномірно неперервні функції}} 
+
+\begin{definition}[за Гейне]
+         Нехай $M \subset D_f$. Кажуть, що функція $f$ \textcolor{NavyBlue}{\textbf{\textit{{рівномірно неперервна}}}} на множині $M$, якщо  $\forall  x_n, y_n \in M: x_n - y_n \to 0 \Rightarrow f(x_n) - f(y_n) \to 0$. 
+\end{definition}
+
+\begin{definition}[за Коші]
+       Нехай $M \subset D_f$. Кажуть, що функція $f$ \textcolor{NavyBlue}{\textbf{\textit{{рівномірно неперервна}}}} на множині $M$, якщо  $\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall x_1, x_2 \in M: |x_1 - x_2| < \delta \Rightarrow |f(x_1) - f(x_2)| < \varepsilon$.   
+\end{definition}
+
+\begin{definition}[за Коші]
+        Нехай $M \subset D_f$. Кажуть, що функція $f$  \textcolor{NavyBlue}{\textbf{\textit{{неперервна}}}} \textcolor{NavyBlue}{\textbf{\textit{{на множині}}}} $M$, \newline якщо  $\forall x_1 \in M \ \forall \varepsilon > 0 \ \exists \delta > 0 \ \forall x_2 \in M: |x_1 - x_2| < \delta \Rightarrow |f(x_1) - f(x_2)| < \varepsilon$.   
+\end{definition}
+
+\begin{theorem}
+        Якщо функція $f$ є рівномірно неперервна на множині $M$, то вона є неперервна на $M$.       
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Гейне-Кантора}}}}}]
+        Якщо $f$ неперервна на компакті $K$, то вона і рівномірно неперервна на $K$.
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\Large{Похідна}}
+
+\subsection{\large{Диференційованість функцій}} 
+
+\begin{definition}
+
+         Нехай $x_0 \: - $ гранична точка $D_f$, $x_0 \in D_f$. Якщо існує $\Lim_{x \to x_0} \dfrac{f(x) - f(x_0)}{x - x_0}$, то кажуть, що функція $f$ \textcolor{NavyBlue}{\textbf{\textit{має  похідну (диференційована)}}} в точці $x_0$ і ${f}'(x_0) = \Lim_{x \to x_0} \dfrac{f(x) - f(x_0)}{x - x_0}$.
+\end{definition}
+
+\begin{definition}[за Ферма]
+         Нехай $x_0 \: - $ гранична точка $D_f$, $x_0 \in D_f$. Кажуть, що $f$ \textcolor{NavyBlue}{\textbf{\textit{диференційована (має похідну)}}} в точці $x_0$, якщо існує така неперервна функція в точці $x_0 \ \varphi_f$, що $f(x) - f(x_0) = \varphi_f(x) (x - x_0)$  $\forall x \in D_f$. Тоді $f'(x_0) = \varphi_f(x_0)$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про арифметичні дії з диференційованими функціями}}}}}]
+        Нехай $f$ і $g \: -$ диференційовані в точці $x_0$ функції та $D_f = D_g$. Тоді функції $f \pm g$, $f \cdot g$, $\dfrac{f}{g}$  $(g(x_0) \neq 0)$ також диференційовані в точці $x_0$ і
+        \begin{enumerate}
+            \item $(f \pm g)'(x_0) = f'(x_0) \pm g'(x_0)$
+            \item $(f \cdot g)'(x_0) = f'(x_0) \cdot g(x_0) + f(x_0) \cdot g'(x_0)$
+            \item $\left(\dfrac{f}{g}\right)'(x_0) = \dfrac{f'(x_0) \cdot g(x_0) - f(x_0) \cdot g'(x_0)}{g^2(x_0)}$
+        \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{необхідна умова диференційованості}}}}}]
+        Якщо функція диференційована в точці $x_0$, то вона неперервна в точці $x_0$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про похідну складеної функції}}}}}]
+        Нехай $f$ і $g \: - $ функції та $x_0 \: -$ гранична точка $D_{f \circ g}$, $x_0 \in D_{f \circ g}$. Якщо функція $g$ має похідну в точці $x_0$, а функція $f \: -$ в точці $t_0 = g(x_0)$, то $f \circ g$ має похідну в точці $x_0$ і $(f \circ g)'(x_0) = f'(t_0) g'(x_0).$
+\end{theorem}
+
+\begin{definition}
+        Нехай $x_0 \: - $ гранична точка $D_f \cap (x_0; \: +\infty)$, $x_0 \in D_f$. $f_r'(x_0) = \Lim_{x \to x_0^{+}} \dfrac{f(x) - f(x_0)}{x - x_0}$ називають \textcolor{NavyBlue}{\textbf{\textit{{правою похідною}}}} функції $f$ в точці $x_0$.
+\end{definition}
+
+\begin{definition}
+        Нехай $x_0 \: - $ гранична точка $D_f \cap (-\infty; \: x_0)$, $x_0 \in D_f$. $f_l'(x_0) = \Lim_{x \to x_0^{-}} \dfrac{f(x) - f(x_0)}{x - x_0}$ називають \textcolor{NavyBlue}{\textbf{\textit{{лівою похідною}}}} функції $f$ в точці $x_0$.
+\end{definition}
+
+\begin{definition}
+        Нехай $f \: -$ диференційована в точці $x_0$ функція. Лінійну функцію $d_{x_0}f$, яку визначає рівність $d_{x_0}f(h) = f'(x_0) h$, називають \textcolor{NavyBlue}{\textbf{\textit{{диференціалом}}}} функції $f$ в точці $x_0$.
+\end{definition}
+
+\subsection{\large{Основні теореми диференціального числення}} 
+
+\begin{definition}
+        Точку $x_0 \in M$ називають \textcolor{NavyBlue}{\textbf{\textit{{точкою глобального мінімуму}}}} множини $M$, якщо \newline  $\forall x \in M \: f(x_0) \leqslant  f(x).$
+\end{definition}
+
+\begin{definition}
+        Точку $x_0 \in M$ називають \textcolor{NavyBlue}{\textbf{\textit{{точкою глобального максимуму}}}} множини $M$, якщо \newline  $\forall x \in M \: f(x_0) \geqslant   f(x).$
+\end{definition}
+
+\begin{definition}
+        Точку $x_0 \in M$ називають \textcolor{NavyBlue}{\textbf{\textit{{точкою локального мінімуму}}}} множини $M$, якщо \newline $\exists \: O(x_0)$, що  $\forall x \in O(x_0), \; x \in D_f \; f(x_0) \leqslant  f(x).$
+\end{definition}
+
+\begin{definition}
+        Точку $x_0 \in M$ називають \textcolor{NavyBlue}{\textbf{\textit{точкою локального максимуму}}} множини $M$, якщо \newline $\exists \: O(x_0)$, що  $\forall x \in O(x_0), \; x \in D_f \; f(x_0) \geqslant  f(x).$
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Ферма}}}}}]
+        Нехай $f$ має екстремум в точці $x_0$, яка є внутрішньою точкою $D_f$. \newline Якщо $f \: -$ диференційована в точці $x_0$, то $f'(x_0) = 0$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Ролля}}}}}]
+        Нехай $f \in C([a; \: b])$ та диференційована на $(a; \: b)$. Якщо $f(a) = f(b)$, то $\exists \xi \in (a; \: b)$, що $f'(\xi) = 0$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Дарбу}}}}}]
+        Нехай $f$ диференційована на $[a; \: b]$ і $f_r'(a)  f_l'(b) < 0$. Тоді $\exists \xi \in (a; \: b)$, що $f'(\xi) = 0$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про проміжне значення похідної}}}}}]
+         Нехай $f$ диференційована на $[a; \: b]$. Тоді $\forall l$ між числами $f'(a)$ і $f'(b) \ \exists \xi \in (a; \: b)$, що $f'(\xi) = l$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Лагранжа}}}}}]
+          Нехай $f \in C([a; \: b])$ та диференційована на $(a; \: b)$. Тоді $\exists \xi \in (a; \: b)$, що $f'(\xi) = \dfrac{f(b) - f(a)}{b - a}$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про неперервність похідної}}}}}]
+        Нехай $f$ неперервна в околі точки $x_0$ і  $\forall x \in O(x_0)\setminus \left \{ x_0  \right \} \ \exists \ f'(x)$. Якщо $\exists \Lim_{x \to x_0} f'(x) = a$, то $f$ має похідну і в точці $x_0$, тобто $f'(x_0) = a$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про похідну оберненої функції}}}}}]
+        Нехай $f$ має похідну в околі точки $x_0$, яка не обертається в нуль. Тоді в околі точки $P(x_0; \:  f(x_0))$ функція $f$ має обернену $f^{-1}$ і вона має похідну $(f^{-1})'(y_0) = \dfrac{1}{f'(x_0)}, \; y_0 = f(x_0)$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Лейбніца}}}}}]
+        Нехай $f$ і $g$ мають $n$-ту похідну на $(a; \: b)$. Тоді $f\cdot g$ має $n$-ту похідну на $(a; \: b)$ і  \centerline{$(f \cdot g)^{(n)} = \Sum_{k=0}^n C_n^{k}  f^{(k)}  g^{(n - k)}$}
+\end{theorem}
+
+\begin{definition}
+        \textcolor{NavyBlue}{\textbf{\textit{ Другим диференціалом функції}}} $f$ в т. $x_0$ називають функцію, що визначається рівністью \centerline{$d^{2}_{x_0}f(h) = f''(x_0)  h^{2}$}
+\end{definition}
+
+\newpage
+\input{2sem.tex}    
+
+
+
+\newpage
+\section{\Large{Ряди}}
+$a_1 + a_2 + \ldots + a_n + \ldots \: -$ ряд, $a_i \in \RR$. \\
+
+Розглянемо послідовність $a_n \in \RR$:
+\begin{equation} 
+    % one can turn off the numeration by using \begin{equation*}
+    % same works with any other numbered environment
+    \label{ep:1.1}
+    \begin{aligned}
+        S_1 &= a_1\\
+        S_2 &= a_1 + a_2\\
+        S_3 &= a_1 + a_2 + a_3 \\
+        \ldots \\
+        S_n &= a_1 + a_2 + \ldots + a_n \\
+        \ldots
+    \end{aligned}
+\end{equation}
+
+\begin{definition}
+    Послідовність $S_n$ називають  \textcolor{NavyBlue}{\textbf{\textit{послідовністю часткових сум}}}.
+\end{definition}
+
+\begin{definition}
+    $a_n$ називають \textcolor{NavyBlue}{\textbf{\textit{загальним членом ряду}}.}
+    \end{definition} 
+
+\begin{definition}
+    Нехай $a_1 + a_2 + a_3 + \ldots = \Sum_{n=1}^\infty a_n \: -$  числовий ряд. Кажуть, що цей  \textcolor{NavyBlue}{\textbf{\textit{ряд збігається до числа}}} $S \in \RR$, якщо послідовність $S_n = a_1 + a_2 + a_3 + \ldots + a_n = \Sum_{k=1}^n a_k$ збігається до числа $S$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{необхідна умова збіжності}}}}}]
+    Нехай $\Sum_{n=1}^\infty a_n \: -$ збіжний числовий ряд. Тоді $a_n \to 0$.
+\end{theorem}
+
+% \let\biconditional\leftrightarrow
+% \newcommand{\gt}{\textgreater}
+% \newcommand{\lt}{\textless} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій Коші, критерій збіжності ряду}}}}}]
+    % one can use \xrightarrow[below]{above} to produce long \rightarrow with superscript and subscript
+    Числовий ряд $\Sum_{n = 1}^\infty a_n$  є збіжним $\iff $ \newline $\Sum_{k=n}^m a_k \xrightarrow[n, m \to \infty]{} 0$, тобто 
+   $ \forall \varepsilon > 0 \: \, \exists N \ \forall n, m \geqslant N, \: m \geqslant n:  \, \: \left|\Sum_{k=n}^m a_k\right| < \varepsilon$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про арифметичні дії зі збіжними рядами}}}}}]
+    Нехай $\Sum_{n=1}^\infty a_n$,  $\Sum_{n=1}^\infty b_n \: -$ збіжні числові ряди. \newline Тоді також будуть збіжними ряди
+    \begin{enumerate}
+        \item $\Sum_{k=1}^\infty (a_k \pm b_k)$
+        
+        \item $\Sum_{k=1}^\infty \lambda a_k \: $, $\lambda \in \mathbb{R}$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{\large{Ряди з невід'ємними членами}}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій збіжності ряду з невід'ємними членами}}}}}]
+    % use \iff to produce \Leftrightarrow in the "if and only if" meaning
+    % \geqslant stand for Greater or Equal, \leqslant for Less or Equal, for > and < one can simply use the corresponding keys on the keyboard
+    % oh, btw, u can use \geslant and \leqslant slant to produce Russian-style comparators
+    Нехай $a_n \geqslant 0$, тоді ряд $\Sum_{n=1}^\infty a_n$ є збіжним  $\iff$ послідовність $S_n = a_1 + a_2 + a_3 + \ldots + a_n$ обмежена.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{ознаки порівняння №1}}}]
+    Нехай $a_n, \: b_n \: -$ числові послідовності та $0\leqslant  a_n \leqslant  b_n$. Тоді 
+    
+    \begin{enumerate}
+        \item якщо ряд $\Sum_{n=1}^\infty b_n$ збіжний, то ряд  $\Sum_{n=1}^\infty a_n$ теж збіжний
+        
+        \item якщо ряд $\Sum_{n=1}^\infty a_n$ розбіжний, то ряд  $\Sum_{n=1}^\infty b_n$ теж розбіжний
+    \end{enumerate}
+\end{theorem}
+
+\newpage
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознаки порівняння №2}}}}}]
+    Нехай $a_n, \: b_n > 0$. Якщо $\dfrac{a_{n + 1}}{a_n} \leqslant  \dfrac{b_{n+1}}{b_n}$, то 
+    \begin{enumerate}
+        \item зі збіжності ряду $\Sum_{n=1}^\infty b_n$ випливає збіжність ряду $\Sum_{n=1}^\infty a_n$
+        
+        \item з розбіжності ряду $\Sum_{n=1}^\infty a_n$ випливає розбіжність ряду $\Sum_{n=1}^\infty b_n$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Маклорена-Коші}}}}}]
+    Нехай $f(x) \: -$ неперервна на $[1; \: + \infty)$ функція. Якщо
+    \begin{enumerate} 
+        \item $f(x) \geqslant 0$, $\forall x \in [1; \: + \infty)$% you do not usually place a white space between sign and a number
+        
+        \item $f(x) \: -$ монотонно спадна функція, $\forall x \in [1; \: + \infty)$
+    \end{enumerate}
+    
+    тоді ряд $\Sum_{n=1}^\infty f(n)$ збігається або розбігається одночасно з $\Lim_{m \to \infty} \Int_1^m f(x) \, \mathrm{d}x$.
+\end{theorem}
+%can it be written next to the ukr text? not in the center PERFECT 
+% $ $ -- inline math mode
+% \[ \] or $$ $$ -- math mode on the separate line ok
+% btw, u can press Command+S or Command+Return to recompile file (there is no need to press the button itself) 
+
+\subsection{\large{Еталонні ряди}}
+ \begin{enumerate}
+            \item $\Sum_{n=1}^\infty q^{n} \: -$ геометрична прогресія. 
+          Збіжний при $|q| < 1 $, розбіжний при  $|q|  \geqslant  1$.
+           \item $\Sum_{n=1}^\infty \dfrac{1}{n^{\lambda}}  \: - $ степеневий ряд.
+           Збіжний при $\lambda >1 $, розбіжний при  $\lambda  \leqslant  1$.
+           \item $\Sum_{n=2}^\infty \dfrac{1}{n  \ln^{\lambda}{n}}$. Збіжний при $\lambda >1 $, розбіжний при  $\lambda  \leqslant  1$.
+           \item $\Sum_{n=2}^\infty \dfrac{1}{n  \ln{n}  (\ln{\ln{{n}}})^{\lambda}}$. Збіжний при $\lambda >1 $, розбіжний при  $\lambda  \leqslant  1$.
+          
+       
+       \end{enumerate}
+
+\subsection{\large{Ознаки збіжності рядів з невід'ємними членами}}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Коші}}}}}]
+Нехай $a_n \geqslant  0$ i  $ \exists \overline{\Lim_{n \to \infty}}
+ \sqrt[\leftroot{-1}\uproot{2}\scriptstyle n]{a_n} =r $. Якщо $r < 1 $ ряд $\Sum_{n=1}^\infty a_n \: - $ збіжний, якщо \newline $r > 1 \: - $ розбіжний.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Д'Аламбера}}}}}]
+Нехай $a_n > 0$ i   $\exists {\Lim_{n \to \infty}} \dfrac{a_{n+1}}{a_n}=r $. Якщо $r < 1 $ ряд $\Sum_{n=1}^\infty a_n - $ збіжний, якщо \newline $r > 1 \: - $ розбіжний.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Раабе}}}}}]
+
+Нехай $a_n > 0$ і $\exists \Lim_{n \to \infty} n\left(\dfrac{a_n}{a_{n+1}}-1\right)=r \in \mathbb{\overline{R}}$. Якщо $r > 1 $ ряд $\Sum_{n=1}^\infty a_n \: - $ збіжний, якщо $ r < 1 \: - $ розбіжний.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Гаусса}}}}}]
+
+Нехай $a_n > 0$ i $\forall n $ виконується рівність $\dfrac{a_n}{a_{n+1}}= 1 + \dfrac{\lambda}{n}+\dfrac{O(1)}{n^{1+\varepsilon}}$, де $\varepsilon = const,\varepsilon > 0$. Тоді
+       \begin{enumerate}
+           \item при $\lambda > 1 $ ряд  $\Sum_{n=1}^\infty a_n $ збіжний
+           \item при $\lambda \leqslant  1 $ ряд  $\Sum_{n=1}^\infty a_n $ розбіжний
+       \end{enumerate}
+       
+\end{theorem}
+
+\subsection{\large{Знакозмінні ряди}}
+\begin{definition}
+  Ряд $\Sum_{n=1}^\infty a_n$ називають \textcolor{NavyBlue}{\textbf{\textit{абсолютню збіжним}}}, якщо збігається ряд  $\Sum_{n=1}^\infty |a_n|$.
+\end{definition}
+
+\begin{theorem}
+Якщо $\Sum_{n=1}^\infty a_n$ збігається абсолютно, то  $\Sum_{n=1}^\infty a_n \: -$ збіжний ряд.
+\end{theorem}
+\begin{definition}
+    Ряд $\Sum_{n=1}^\infty a_n$ називають \textcolor{NavyBlue}{\textbf{\textit{умовно збіжним}}}, якщо він збігається, але не абсолютно. 
+\end{definition}
+
+
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{перетворення Абеля}}}}}]
+Нехай $a_n, \: b_n \: - $ послідовності. Тоді
+
+
+\centerline{$\Sum_{k=1}^n a_k(b_k-b_{k-1}) = a_nb_n-a_1b_0-
+\Sum_{k=1}^{n-1}b_k(a_{k+1}-a_k)$}
+\end{theorem}
+
+\subsection{\large{Ознаки збіжності знакозмінних рядів}}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Діріхле}}}}}]
+Нехай $a_n, \: b_n \: -$ числові послідовності. Якщо  
+       \begin{enumerate}
+           \item $a_n - $ монотонна послідовність 
+           \item $a_n \rightarrow 0 $
+           \item послідовність $B_n=b_1+b_2+...+b_n \: - \ $обмежена
+       \end{enumerate}
+ то $\Sum_{n=1}^\infty a_n  b_n \: - \ $збіжний ряд.
+
+\end{theorem}
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Лейбніца}}}}}]
+Нехай $a_n \: - $ числова послідовність. Якщо  
+       \begin{enumerate}
+           \item $a_n  \: - $ монотонна послідовність 
+           \item $a_n \rightarrow 0 $
+       \end{enumerate}
+ то $\Sum_{n=1}^\infty(-1)^n  a_n \: - \ $збіжний ряд.
+
+
+\end{theorem}
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Абеля}}}}}]
+Нехай $a_n, \: b_n \: -$ числові послідовності. Якщо  
+       \begin{enumerate}
+           \item $a_n  \: - $ монотонна послідовність 
+           \item $a_n  \: - $ обмежена послідовність (збіжна)
+           \item  $\Sum_{n=1}^\infty b_n  \: - $ збіжний ряд
+       \end{enumerate}
+ то $\Sum_{n=1}^\infty a_n  b_n  \: - \ $збіжний ряд.
+
+
+\end{theorem}
+
+\subsection{\large{Структура умовно збіжних рядів}}
+Нехай $\Sum_{n=1}^\infty a_n \: -$ умовно збіжний ряд. Тоді 
+\begin{equation*}
+a^+_n =  \begin{cases}
+            a_n, & \text{якщо $a_n \geqslant 0 $} \\
+            0, & \text{якщо $a_n < 0$} 
+       \end{cases} \quad
+a^-_n =  \begin{cases}
+               a_n, & \text{якщо $a_n \leqslant  0 $} \\
+            0, & \text{якщо $a_n > 0$} \\
+      
+       \end{cases}
+\end{equation*}
+
+
+\begin{theorem}
+Нехай $\Sum_{n=1}^\infty a_n \: - $ умовно збіжний ряд. Тоді  $\Sum_{n=1}^\infty a_n^{+} = +\infty$ в $\mathbb{\overline{R}}$ і 
+  $\Sum_{n=1}^\infty a_n ^{-}= -\infty$ в $\mathbb{\overline{R}}$.
+\end{theorem}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{Рімана}}}}}] 
+
+Нехай $\Sum_{n=1}^\infty a_n \: -$ умовно збіжний ряд. Тоді  $\forall l \in 
+\mathbb{\overline{R}}$ існує така перестановка доданків  $b_n = a_{k(n)}$ 
+($b_n \: -$ така сама послідовніть $a_n$, але числа записані в іншому порядку), що  $\Sum_{n=1}^\infty b_n = l$.
+\end{theorem}
+
+
+\section{\Large{Невласні інтеграли}}
+
+\begin{definition}
+    Нехай $f \: -$ інтегровна за Ріманом функція на $[a; \:b]$ для всіх $ b>a,\; a \: -$ фіксоване. Якщо існує границя$ \Lim_{b \to +\infty} \Int_a^b f(x) \, \mathrm{d}x=I \in \mathbb{R}$ , то кажуть, що  \textcolor{NavyBlue}{\textbf{\textit{невласний інтеграл першого роду}}} $\Int_a^{+\infty} f(x) \, \mathrm{d}x \ $  \textcolor{NavyBlue}{\textbf{\textit{є збіжним. }}}
+\end{definition}
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій Коші}}}}}] 
+$\Int_a^{+\infty} f(x) \, \mathrm{d}x \ $ є збіжним $\iff \Lim_{c, b \to +\infty} \Int_c^b f(x) \, \mathrm{d}x = 0$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про арифметичні дії з невласними інтегралами}}}}}]  
+
+\end{theorem}
+
+\begin{enumerate} 
+\item  $\Int_a^{+\infty} \alpha f(x) \, \mathrm{d}x = \alpha \Int_a^{+\infty} f(x) \, \mathrm{d}x $
+\item $\Int_a^{+\infty} (f(x) \pm g(x)) \, \mathrm{d}x = \Int_a^{+\infty} f(x) \, \mathrm{d}x \pm \Int_a^{+\infty} g(x) \, \mathrm{d}x $
+\end{enumerate}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознаки порівняння}}}}}] 
+Якщо $0 \leqslant  f(x) \leqslant  g(x) $ і 
+     \begin{enumerate}
+           \item $\Int_a^{+\infty} g(x) \, \mathrm{d}x \: - $  збіжний, то $\Int_a^{+\infty} f(x) \, \mathrm{d}x \: - $ збіжний 
+           \item  $\Int_a^{+\infty} f(x) \, \mathrm{d}x \: - $ розбіжний, то 
+            $\Int_a^{+\infty} g(x) \, \mathrm{d}x \: - $ розбіжний
+       \end{enumerate}
+
+\end{theorem}
+ \textcolor{NavyBlue}{\textbf{\textit{Еталонні невласні інтеграли }}}
+(збіжні при $p>1$, розбіжні при $p \leqslant  1$):
+
+\begin{enumerate}
+\item $\Int_a^{+\infty} \dfrac{1}{x^p} \, \mathrm{d}x $
+
+
+\item $\Int_a^{+\infty} \dfrac{1}{x  \ln^px} \, \mathrm{d}x $
+
+
+\item $\Int_a^{+\infty} \dfrac{1}{x  \ln x  \ln \ln^px} \, \mathrm{d}x $
+\end{enumerate}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Діріхле}}}}}] 
+Нехай $f$ і $g \: -$ неперервні на $[a; \: +\infty)$ функції і 
+       \begin{enumerate}
+           \item $f \: - $ монотонна 
+           \item $f(x) \rightarrow 0 $ при $x \to +\infty$
+           \item $\Int_a^b g(x) \, \mathrm{d}x = G(b) \: - $ обмежена функція
+       \end{enumerate}
+Тоді $\Int_a^{+\infty} f(x)  g(x) \, \mathrm{d}x \: - $ збіжний невласний інтеграл першого роду. 
+\end{theorem}
+\newpage
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Абеля}}}}}] 
+Нехай $f$ і $g \: -$ неперервні на $[a; \: +\infty)$ функції і 
+       \begin{enumerate}
+           \item $f \: - $ монотонна 
+           \item $f \: - $ обмежена функція $\left( \exists \Lim_{x \to \infty} f(x)\right)$
+           \item $\Int_a^{+\infty} g(x) \, \mathrm{d}x - $ збіжний інтеграл
+       \end{enumerate}
+Тоді $\Int_a^{+\infty} f(x)  g(x) \, \mathrm{d}x \: - $ збіжний невласний інтеграл першого роду. 
+
+\end{theorem}
+
+ \textcolor{NavyBlue}{\textbf{\textit{Зауваження!}}} Для невласних інтегралів НЕ виконується аналогічна необхідна умова збіжності рядів. 
+
+\begin{definition}
+    Нехай $f \: -$ неперервна функція на $(a; \: b]$. Якщо існує границя $ \Lim_{A \to a^+} \Int_A^b f(x) \, \mathrm{d}x=I \in \mathbb{R}$ , то кажуть, що  \textcolor{NavyBlue}{\textbf{\textit{невласний інтеграл другого 
+    роду є збіжним}}}, тобто $\Int _a^b f(x) \, \mathrm{d}x = I$.
+\end{definition}
+\textcolor{NavyBlue}{\textbf{\textit{Зауваження!}}} Нехай $f \: - \ $неперервна фукція на  $(a; \: b)\cup (b; \: +\infty) $. Тоді під $\Int _a^{+\infty} f(x) \, \mathrm{d}x$ розуміють суму чотирьох невласних інтегралів (за умови, що всі невласні інтеграли $I_1, I_2, I_3, I_4$ збіжні). 
+
+$I_1 = \Int _a^{\frac{a+b}{2}} f(x) \, \mathrm{d}x$, \;
+$I_2 = \Int _{\frac{a+b}{2}}^b f(x) \, \mathrm{d}x$, \;
+$I_3 = \Int _b^{b+1} f(x) \, \mathrm{d}x$,  \;
+$I_4 = \Int _{b+1}^{+\infty} f(x) \, \mathrm{d}x$.
+
+\textcolor{NavyBlue}{\textbf{\textit{Зауваження!}}} Заміною $t=\dfrac{1}{x-a\:}$  невласний інтеграл другого роду $ \Int_a^b f(x) \, \mathrm{d}x \ $ зводиться до невласного інтеграла першого роду ($x = a \: -$ особлива точка).
+
+\section{\Large{Функціональні послідовності та ряди}}
+
+\subsection{\large{Функціональні послідовності}}
+\begin{definition}
+$f_1(x), \: f_2(x), \: f_3(x), \: f_4(x), \: ... \: - $  \textcolor{NavyBlue}{\textbf{\textit{функціональна послідовність}}}.
+\end{definition}
+
+\begin{definition}
+Нехай $f_n(x) \: - $ функціональна послідовність, $x \in A.$
+Кажуть, що $f_n $ \textcolor{NavyBlue}{\textbf{\textit{поточково збігається}}} до функції $f$ на множині $A$, якщо  $\forall x \in A \;\; f_n(x) \rightarrow f(x), \; A \subset D_{f_n} $. Позначають $f_n \rightarrow f$.
+\end{definition}
+
+\begin{definition}
+Нехай $\Sum_{n=1}^{\infty} f_n(x) \: - $ функціональний ряд, $x \in A.$
+Кажуть, що $\Sum_{n=1}^{\infty} f_n(x) $ \textcolor{NavyBlue}{\textbf{\textit{поточково збігається}}} до функції $f(x)$ на множині $A$, якщо  $\forall x \in A \;\;  \Sum_{n=1}^{\infty} f_n(x) = f(x), \; A \subset D_{f_n} $. 
+\end{definition}
+
+\begin{definition}
+Нехай $f_n(x) \: - $ функціональна послідовність, $x \in A,\; A \subset D_{f_n} $. 
+Кажуть, що $f_n(x) $ \textcolor{NavyBlue}{\textbf{\textit{рівномірно збігається}}} до функції $f$ на множині $A$, якщо  
+$ \underset{x \in A}{\sup}|f_n(x) - f(x)| \rightarrow 0$. Позначають $f_n \rightrightarrows f$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про зв'язок між рівномірною і поточковою збіжностями}}}}}] 
+Нехай $f_n \rightrightarrows f$ на множині $A$. Тоді $f_n \rightarrow f$ на множині $A$. 
+\end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{необхідна умова рівномірної збіжності}}}}}] 
+Нехай $f_n \rightrightarrows f$ на множині $A$, $f \: -$ обмежена. $\newline$ Тоді $f_n \: - $ рівномірно обмежена, тобто 
+
+
+
+\centerline{$\exists c>0 \;\; \forall n \in \mathbb{N} \;\; \forall x \in A: \;\; |f_n(x)| \leqslant  c$}
+
+
+
+ \hspace{184}$\exists c>0 \;\; \forall n \in \mathbb{N}: \;\;  \underset{A}{\sup}|f_n(x)| \leqslant c$
+\end{theorem} 
+
+\begin{theorem} [\textcolor{Maroon}{\textbf{\textit{{{про арифметичні дії з рівномірно збіжними функціональними послідовностями}}}}}] $\newline$
+Нехай $f_n \rightrightarrows f$,  $g_n \rightrightarrows g$ на множині $A$, $f \: -$ обмежена. Тоді 
+ \begin{enumerate}
+           \item  $f_n \pm g_n \rightrightarrows f \pm g$
+           \item $kf_n \rightrightarrows kf \: (k = const)$
+       \end{enumerate}
+\end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{критерій Коші}}}]
+
+\end{theorem} 
+ Функціональна послідовність $f_n \: $ збігається рівномірно до функції $f$ на множині $A  \iff \underset{x \in A}{\sup} \left|f_n(x) - f_m(x)\right|  \rightarrow 0$.
+
+
+\subsection{\large{Функціональні ряди}}
+
+\begin{definition}
+$\Sum_{n=1}^\infty f_n(x) \: -$  \textcolor{NavyBlue}{\textbf{\textit{функціональний ряд}}}.
+\end{definition}
+
+\begin{definition}
+Кажуть, що \textcolor{NavyBlue}{\textbf{\textit{фунціональний ряд}}} $\Sum_{n=1}^\infty f_n(x)$  \textcolor{NavyBlue}{\textbf{\textit{збігається рівномірно}}} до функції $f(x)$ на $\newline$ множині $A$, якщо $S_n(x) = \Sum_{k=1}^n f_k(x) \underset{A}{\rightrightarrows }f(x)$.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій Коші}}}}}] 
+Функціональний ряд $\Sum_{n=1}^\infty f_n(x)$ збігається рівномірно на множині $A\iff$
+
+\centerline{$\underset{x \in A}{\sup} \left|  \Sum_{k=n}^m f_k(x)\right| \xrightarrow[m, n \to +\infty]{} 0$}
+\end{theorem} 
+
+ \textcolor{NavyBlue}{\textbf{\textit{Зауваження!}}} ${\sup}\left|f(x)\right|$ часто позначають $\|f(x)\|$.
+ 
+$\hspace{20cm}$
+\textcolor{Maroon}{\textbf{\textit{{Наслідок(необхідна умова рівномірної збіжності функціонального ряду)}}}}
+Якщо функціональний ряд $\Sum_{n=1}^\infty f_n(x) \: $ збігається рівномірно на множині $A$, то послідовність $\|f_n(x)\| \rightarrow 0$, тобто $\underset{x \in A}{\sup} \left|f_n(x)\right| \rightarrow 0$.
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{мажорантна ознака Вейєрштраcса}}}}}] 
+Нехай $\Sum_{n=1}^\infty f_n(x) \: -$ функціональний ряд. Існує числова послідовність $\alpha_n$, що $\forall x \in A, \; n \in \mathbb{N}: \; |f_n(x)| \leqslant  \alpha_n$. Якщо ряд, утворений з цих чисел, збіжний $\left(\Sum_{n=1}^\infty \alpha_n \right)$, то 
+ $\Sum_{n=1}^\infty f_n(x)$  збігається рівномірно на множині $A$.
+ \end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Діріхле}}}}}] 
+Нехай $f_n(x)$ і $g_n(x) \: -$ функціональні послідовності 
+       \begin{enumerate}
+           \item $\forall x \in A \; \;f_n(x) \: - $ монотонна послідовність (за змінною $n$)
+           \item $f_n \rightrightarrows 0 $ на $A$
+           \item $G_n(x) = g_1(x) + g_2(x) +....+ g_n(x) \: - \ $рівномірно обмежена, тобто $\exists c > 0 \;\; \forall x \in A \;\; \forall n \in \mathbb{N}: \;\; \left| G_n(x) \right| \leqslant  c$
+       \end{enumerate}
+Тоді $\Sum_{n=1}^{\infty} f_n(x)  g_n(x) $ рівномірно збіжний на множині $A$.
+
+\end{theorem} 
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Абеля}}}}}] 
+Нехай $f_n(x)$ і $g_n(x) \: -$ функціональні послідовності 
+       \begin{enumerate}
+           \item $\forall x \in A \; \;f_n(x) \: - $ монотонна послідовність (за змінною $n$)
+           \item $f_n - $ рівномірно обмежена послідовність, тобто $\exists c > 0 \;\; \forall x \in A \;\; \forall n \in \mathbb{N}: \;\; \left| f_n(x) \right| < c$
+           \item  $\Sum_{n=1}^{\infty} g_n \rightrightarrows $ на множині $A$
+       \end{enumerate}
+Тоді $\Sum_{n=1}^{\infty} f_n(x)  g_n(x) $ рівномірно збіжний на множині $A$.
+
+\end{theorem} 
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про неперервність границі функціональної послідовності}}}}}] 
+\end{theorem} 
+Нехай $f_n \in C([a; \: b])$ і $f_n \rightrightarrows f$ на $[a; \:b]$. Тоді $f \in C([a; \: b])$.
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про інтегрування границі функціональної послідовності}}}}}] 
+
+\end{theorem} 
+Нехай $f_n \in C([a; \: b])$ і $f_n \rightrightarrows f$ на $[a; \:b]$. Тоді $\Int_a^b f_n  \, \mathrm{d}x \rightarrow \Int_a^b f \, \mathrm{d}x $.
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про диференціювання границі функціональної послідовності}}}}}] 
+Нехай $f_n \in C^1([a; \: b])$. Якщо
+       \begin{enumerate}
+           \item $\exists x_0 \in [a; \: b] \; \;f_n(x_0) - $ збіжна послідовність
+           \item $f_n' \rightrightarrows g $ на $[a; \: b]$
+       \end{enumerate}
+тоді $\forall x \in [a; \: b]\;\; f_n \rightarrow f$, функція $f \in C^1([a; \: b])$ і $f' = g$, тобто $f'_n \rightarrow f'$.
+\end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про диференціювання границі функціонального ряду}}}}}] 
+Нехай $f_n \in C^1([a; \: b])$. Якщо
+       \begin{enumerate}
+           \item $\exists x_0 \in [a; \: b] \; \; \Sum_{n=1}^{\infty} f_n(x_0) \: - $ збіжний ряд
+           \item  $\Sum_{n=1}^{\infty} f'_n \rightrightarrows g $
+       \end{enumerate}
+тоді $\forall x \in [a; \: b]: \;\; \Sum_{n=1}^{\infty} f_n(x)= f(x)$, функція $f \in C^1([a; \: b])$ і $f' = g$, тобто   $\Sum_{n=1}^{\infty} f'_n (x)= \left(\Sum_{n=1}^{\infty} f_n(x)\right)' $.
+
+
+\end{theorem} 
+
+
+\subsection{\large{Степеневі ряди}}
+$a_0 + a_1x+...+ a_nx^n+.... \: - $  \textcolor{NavyBlue}{\textbf{\textit{степеневий ряд. }}}
+
+\begin{definition}
+    Множина $I \subset \mathbb{R}$ , на якій збігається степеневий ряд $\Sum_{n=0}^{\infty} a_nx^n$,  називається \textcolor{NavyBlue}{\textbf{\textit{множиною \newline збіжності степеневого ряду}}}.
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{формула Коші-Адамара}}}] 
+$R \: - \ $радіус збіжності степеневого ряду. $R = \dfrac{1}{l},\;\; l = \overline{\Lim_{n \to \infty}} \sqrt[\leftroot{-1}\uproot{2}\scriptstyle n]{|a_n|}$.
+\end{theorem}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{властивості степеневого ряду}}}] $\Sum_{n=0}^\infty a_nx^n = f(x)$. $R \: - \: $радіус збіжності.
+       \begin{enumerate}
+       \item $\forall x \in (-R; \: R) \;\;f \: - $ неперервна в точці $x$
+       \item  $\Sum_{n=0}^\infty a_nx^n$ збігається рівномірно на $[a; \: b]$, де $[a; \: b] \subset (-R; \: R)$
+       \item $[a; \: b] \subset (-R; \:R), \Int_a^b f(x) \, \mathrm{d}x =  \Int_a^b \Sum_{n=0}^{\infty} a_nx^n \, \mathrm{d}x = \Sum_{n=0}^{\infty} a_n \left ( \dfrac{b^{n+1}-a^{n+1}}{n+1} \right )$ 
+           \item $\forall x \in (-R; \: R) \;\; \exists f'(x)$. Нехай $x_0 \in (-R; \: R)$. Тоді $[a; \: b] \subset (-R; \:R),\; x_0\in (a; \: b) $
+            \begin{enumerate}
+            \item  $\Sum_{n=0}^\infty a_nx^n \: -$ збіжний на $[a; \: b]$
+          \item  $\Sum_{n=0}^\infty (a_nx^n)' \: -$ рівномірно збіжний на $[a; \: b]$
+            \end{enumerate}
+           \item  $f \in C^{\infty}(-R; \: R)$
+       \end{enumerate}
+\end{theorem}
+
+
+
+\begin{definition}
+    Кажуть, що  \textcolor{NavyBlue}{\textbf{\textit{функцію}}} $f $ \textcolor{NavyBlue}{\textbf{\textit{ можна розкласти в степеневий ряд}}} на $[a; \: b]$, якщо існує \newline степеневий ряд $\Sum_{n=0}^\infty a_nx^n$, що збігається до функції $f$.
+\end{definition}
+
+\begin{theorem}[]
+Якщо $f $ можна розкласти в степеневий ряд, то такий розклад єдиний. 
+
+\end{theorem}
+
+
+\begin{theorem}
+Нехай $f \in C^{\infty}(-R; \: R)$. Якщо $\exists c, \: a \in \mathbb{R}  \; $, що $\left| f^{(k)}(x)\right| \leqslant  c  a^k \ \ \forall x \in (-R; \: R)$, то \newline \centerline{$f(x) = f(0) + \dfrac{f'(0)}{1!}  x + \dfrac{f''(0)}{2!}  x^2 + \dfrac{f'''(0)}{3!}  x^3 + ...$.}
+
+\end{theorem}
+
+\section{\Large{Інтеграли, залежні від параметра}}
+\subsection{\large{Власні інтеграли, залежні від параметра}}
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про неперевність власного інтеграла, залежного від параметра}}}}}] 
+Нехай  $f \:  -$ неперервна функція на множині $ [a; \: b] \times [c; \:d]$. Тоді $I(\alpha) = \Int_a^b f(x,\alpha) \, \mathrm{d}x $ є неперервною функцією на $[c; \:d]$.
+\end{theorem} 
+\textcolor{Maroon}{\textbf{\textit{Наслідок:}}} Нехай  $f \in C([a; \: b] \times [c; \:d])$. Тоді $\forall \alpha_0 \in (c; \:d) \Lim_{\alpha \to \alpha_0} \Int_a^b f(x, \: \alpha) \, \mathrm{d}x =\Int_a^b \Lim_{\alpha \to \alpha_0}  f(x, \: \alpha) \, \mathrm{d}x = \Int_a^b f(x, \: \alpha_0) \, \mathrm{d}x$.
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{про диференціювання власного інтеграла, залежного від параметра}}}}}] 
+
+
+\end{theorem} 
+
+Нехай $f(x, \alpha), \dfrac{\partial f}{\partial \alpha} (x, \alpha) \in C([a; \: b] \times [c; \: d])$. Тоді функція $F(\alpha) = \Int_a^b f(x, \: \alpha) \, \mathrm{d}x $ є диференційованою на $[c; \:d]  $ і\\ $F'(\alpha) = \Int_a^b  \dfrac{\partial f}{\partial \alpha} (x, \: \alpha) \, \mathrm{d}x $, тобто $\dfrac{\partial}{\partial \alpha}\left( \Int_a^b f(x, \: \alpha) \, \mathrm{d}x \right)=  \Int_a^b  \dfrac{\partial f}{\partial \alpha} (x, \: \alpha) \, \mathrm{d}x$.
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про інтегрування власного інтеграла, залежного від параметра}}}] 
+
+\end{theorem} 
+Нехай $f(x, \alpha) \in C([a; \: b] \times [c; \:d])$.
+Тоді $\Int_c^d F(\alpha) \, \mathrm{d}\alpha= \Int_c^d \left(\Int_a^b f(x, \: \alpha) \, \mathrm{d}x \right) \mathrm{d}\alpha = \Int_a^b \left(\Int_c^d f(x, \: \alpha) \, \mathrm{d}\alpha \right) \mathrm{d}x $.
+
+ \textcolor{NavyBlue}{\textbf{\textit{Зауваження! }}}Нехай $F(\alpha) = \Int_{\varphi(\alpha)}^{\psi(\alpha)} f(x, \: \alpha) \, \mathrm{d}x  \:  - $ інший тип власного інтеграла, залежного від параметра. Має місце твердження:
+
+
+якщо $f, \: \dfrac{\partial f}{\partial \alpha}, \: \varphi ', \: \psi '\: - $ неперервні функції, то $F'(\alpha) = \Int_{\varphi(\alpha)}^{\psi(\alpha)} f'(x, \: \alpha) \, \mathrm{d}x + f(\psi(\alpha), \: \alpha) \psi'(\alpha) - f(\varphi(\alpha),\: \alpha)  \varphi'(\alpha) $.
+\subsection{\large{Невласні інтеграли першого роду, залежні від параметра}}
+
+$F(\alpha) = \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x  \:  - $  \textcolor{NavyBlue}{\textbf{\textit{невласний інтеграл першого роду, залежний від параметра}}}
+
+\begin{definition}
+Кажуть, що невласний інтеграл, залежний від параметра, $ \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$ \textcolor{NavyBlue}{ \textbf{\textit{збігається поточково}}} на множині $M \ (\alpha \in M)$, якщо $\forall \alpha_0 \in M$ невласний інтеграл $ \Int_a^{+\infty} f(x, \: \alpha_0) \, \mathrm{d}x $ збіжний. 
+\end{definition}
+
+Якщо $ \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$  збігається поточково на множині $M$ , то на множині $M$ визначена функція $F(\alpha) = \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x $.
+
+\begin{definition}
+Кажуть, що невласний інтеграл, залежний від параметра, $\Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x = F(\alpha) $  \textcolor{NavyBlue}{\textbf{\textit{збігається рівномірно}}} на множині $M \ ( \alpha \in M)$, якщо $\underset{\alpha \in M}{\sup} \left|  \Int_a^A f(x, \: \alpha) \, \mathrm{d}x - F(\alpha)\right| \xrightarrow[A \to +\infty]{} 0$.
+
+
+
+\end{definition}
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{критерій Коші}}}}}] 
+Нехай $f(x, \alpha) \in C([a; \: +\infty) \times M)$. Тоді невласний інтеграл, залежний від параметра, $\Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$  збігається рівномірно на множині $M \iff \underset{\alpha \in M}{\sup} \left|  \Int_A^B f(x, \: \alpha) \, \mathrm{d}x\right| \xrightarrow[A, B \to +\infty]{} 0$.
+
+\end{theorem} 
+
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{мажорантна ознака Вейєрштрасса}}}}}] 
+Нехай $f(x, \alpha) \in C([a; \: +\infty) \times M)$. Якщо $\exists g(x)\in C([a; \: +\infty))$ така, що $\left| f(x, \: \alpha)\right| \leqslant  g(x) \ \forall(x, \: \alpha) \in [a; \: +\infty) \times M$ і $\Int_a^{+\infty} g(x) \, \mathrm{d}x$  збігається, то невласний інтеграл, залежний від праметра, $\Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$  збігається рівномірно на множині $M$.
+
+\end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Діріхле}}}}}] 
+Нехай $f(x, \: \alpha), \; g(x, \: \alpha) \:  \: - \ $неперервні функції на $[a; \: +\infty) \times [c; \:d]$. Якщо  
+
+
+1) $\forall\alpha_0 \in [c; \:d]$ функція $f(x, \alpha_0)$  монотонна (за змінною $x$)
+
+2) $f(x, \: \alpha) \rightrightarrows 0$, тобто $\forall \varepsilon>0 \:\; \exists A>a \:\; \forall x> A \:\; \forall \alpha \in [c; \:d]:\;\; \left| f(x, \alpha)-0 \right| < \varepsilon$
+
+3) $G(A, \: \alpha) = \Int_a^A g(x, \: \alpha) \, \mathrm{d}x$ рівномірно обмежена, тобто $\exists C \; \forall A > a \; \forall\alpha \in [c; \:d]: \: \left| G(A, \: \alpha) \right| < C$ \newline
+то невласний інтеграл, залежний від параметра, $\Int_a^{+\infty} f(x, \: \alpha)  g(x, \: \alpha) \, \mathrm{d}x$ збігається рівномірно на $[c;\: d]$.
+
+
+
+\end{theorem} 
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{{{ознака Абеля}}}}}] 
+Нехай $f(x, \: \alpha),\; g(x, \: \alpha) \: - \ $неперервні функції на $[a; \: +\infty) \times [c; \:d]$. Якщо  
+
+
+1) $\forall\alpha_0 \in [c; \:d]$ функція $f(x, \alpha_0)$  монотонна (за змінною $x$)
+
+2) $f(x, \alpha)$ рівномірно обмежена, тобто $\exists C>0 \:\; \forall x> a \:\; \forall \alpha \in [c; \:d]: \;\; \left| f(x, \: \alpha) \right| < C$
+
+
+3) інтеграл $\Int_a^{+\infty} g(x, \: \alpha) \, \mathrm{d}x$ рівномірно збігається на $[c;\:d]$ \newline
+то невласний інтеграл, залежний від параметра, $\Int_a^{+\infty} f(x, \: \alpha)  g(x, \: \alpha) \, \mathrm{d}x$ збігається рівномірно на $[c;\: d]$.
+\end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про неперервність невласного інтеграла, залежного від параметра}}}] 
+\end{theorem} 
+ Нехай $f(x, \alpha) \: - \ $неперервна функція на $[a; \: +\infty) \times [c; \:d]$. Якщо невласний інтеграл $\Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$ збігається рівномірно на $[c; \: d]$, то 
+ $F(\alpha) = \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x \: - $ неперервна функція на $[c; \: d]$.
+ \newpage
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про диференціювання невласного інтеграла, залежного від параметра}}}] 
+$\newline$
+Нехай $f(x, \: \alpha)$ визначена на множині $[a; \: +\infty) \times [c; \:d]$. Якщо
+
+1) $f, \: f'_\alpha  \: -$ неперервні функції на $[a; \: +\infty) \times [c; \:d]$
+
+
+2)  $ \exists \alpha_0 \in [c; \: d]$, що $\Int_a^{+\infty} f(x, \: \alpha_0) \, \mathrm{d}x$ збігається
+
+
+3) $\Int_a^{+\infty} f'_\alpha(x, \: \alpha) \, \mathrm{d}x \rightrightarrows \; G(\alpha)$ на $[c; \: d]$, то 
+
+\hspace{45}1.  $\forall \alpha \in [c; \: d]: \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$ збіжний,
+$F(\alpha) = \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$ 
+
+\hspace{45}2. $F \in  C^1([c; \: d])$  і $F'(\alpha) = G(\alpha)
+=\Int_a^{+\infty} f'_\alpha(x, \: \alpha) \, \mathrm{d}x$, тобто
+$\left( \Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x   \right)'_\alpha =  \Int_a^{+\infty} f'_\alpha(x, \: \alpha) \, \mathrm{d}x $
+\end{theorem} 
+
+\begin{theorem}[\textcolor{Maroon}{\textbf{\textit{про інтегрування невласного інтеграла, залежного від параметра}}}] 
+$\newline$ Нехай $f(x, \: \alpha) \: - \ $ неперервна функція на $[a; \: +\infty) \times [c; \:d]$. Якщо $\Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x$ збігається рівномірно на $[c; \:d] $, то 
+
+\centerline{ $\Int_c^d \left(\Int_a^{+\infty} f(x, \: \alpha) \, \mathrm{d}x \right) \mathrm{d}\alpha = \Int_a^{+\infty} \left(\Int_c^d f(x, \: \alpha) \, \mathrm{d}\alpha \right) \mathrm{d}x $}
+
+\end{theorem} 
+
+\subsection{\large{Невласні інтеграли другого роду, залежні від параметра}}
+ $F(\alpha) =  \Int_a^b f(x, \: \alpha) \, \mathrm{d}x  \: -$  \textcolor{NavyBlue}{\textbf{\textit{невласний інтеграл другого роду, залежний від параметра}}}.
+ 
+ 
+$(x, \: \alpha) \in (a; \: b] \times [c; \: d], \; x=a \: - \:$ особлива точка.
+
+Заміною $t=\dfrac{1}{x-a\:}$ невласний інтеграл другого роду, залежний від параметра, $ \Int_a^b f(x, \alpha) \, \mathrm{d}x \ $ зводиться до невласного інтеграла першого роду, залежного від параметра.
+
+\subsection{\large{Важливі невласні інтеграли}}
+
+       \begin{enumerate}
+           \item \textcolor{NavyBlue}{\textbf{\textit{Інтеграл Діріхле}}}   $ \ I=\Int_0^{+\infty} \dfrac{\sin({\alpha x})}{x} \, \mathrm{d}x=\dfrac{\pi}{2}, \ \alpha > 0$
+           \item \textcolor{NavyBlue}{\textbf{\textit{Інтеграл Фруллані}}}   $ \ I=\Int_0^{+\infty} \dfrac{f(bx)-f(ax)}{x} \, \mathrm{d}x=f(0)  \ln{\dfrac{a}{b}}, \ \alpha > 0$
+           \item \textcolor{NavyBlue}{\textbf{\textit{Інтеграл Пуассона}}} $ \ I=\Int_0^{+\infty} e^{-x^2} \, \mathrm{d}x=\dfrac{\sqrt \pi}{2}$
+           \item \textcolor{NavyBlue}{\textbf{\textit{Інтеграл Френеля}}}  $ \ I=\Int_0^{+\infty} \sin({x^2}) \, \mathrm{d}x
+=\Int_0^{+\infty} \cos({x^2}) \, \mathrm{d}x = \dfrac{\sqrt \pi}{2\sqrt{2}}$
+       \end{enumerate}
+\textcolor{NavyBlue}{\textbf{\textit{Зауваження!}}} Функції
+$y=\dfrac{\sin(x)}{x} \; (x > 0), \; y=e^{-x^2}, \;y=\sin({x^2}), \;y=\cos({x^2})$
+неперервні і мають первісні, але вони не виражаються через елементарні функції. 
+\newpage
+\subsection{\large{Ейлерові інтеграли}}
+       \begin{enumerate}
+           \item \textcolor{NavyBlue}{\textbf{\textit{Гамма-функція}}}
+           $\Gamma (s) = \Int_0^{+\infty}  e^{-x} x^{s-1} \, \mathrm{d}x$
+           
+           Властивості  $\Gamma (s) $:
+          \begin{enumerate}
+           \item    $D(\Gamma) = (0; \: +\infty)$
+          \item $\Gamma (1) = 1 $
+          \item $\Gamma (s+1) = s  \Gamma (s)$
+          \item $\Gamma (n+1) = n!, \ n \in \mathbb{N}$
+          \item $\forall[a; \: b], \: a, \: b > 0 \Int_0^{+\infty} e^{-x} x^{s-1} \, \mathrm{d}x \ $    збігається рівномірно на $[a; \: b]$
+          \item  $\Gamma (s)$ неперервна функція на  $(0; \: +\infty)$
+          \item  $\Gamma (s)  \in C^{\infty}((0; \: +\infty))$
+          \item  $\Gamma '  (s) = \Int_0^{+\infty} e^{-x} x^{s-1} \ln(x) \, \mathrm{d}x$
+    
+       \end{enumerate}
+       
+       
+       Формула доповнення: $\Gamma(\alpha)  \Gamma (1-\alpha) = \dfrac{\pi}{\sin({\pi \alpha})}$
+       
+       
+       
+       
+       Формула Стірлінга: \(\Gamma(s+1) = \sqrt{2\pi s}  s^{s}   e^{\displaystyle- s+ \displaystyle \frac{\Theta(s)}{12s}}\), \: де $\Theta(s) \in (0; \; 1)$
+           \item \textcolor{NavyBlue}{\textbf{\textit{$B$-функція}}} $B(\alpha, \: \beta) = \Int_0^1 x^{\alpha-1} (1-x)^{\beta-1} \, \mathrm{d}x $
+           
+            Властивості  $B(\alpha, \: \beta) $:
+          \begin{enumerate}
+          \item    $D(B) = (0; \: +\infty) \times (0; \:+\infty)$ 
+         \item $B(\alpha, \: \beta) = B(\beta, \: \alpha)$
+          \item $B(\alpha, \: \beta) = \dfrac{\Gamma(\alpha)
+\Gamma(\beta)}{\Gamma(\alpha+\beta)}$
+        \end{enumerate}
+       \end{enumerate}
+
+\input{4sem.tex}    
+\newpage
+
+Якщо Ви знайшли помилку, чи є якісь інші запитання $-$ звертайтесь до Телеграм:
+\begin{enumerate}
+    \item @angelcoder
+    \item @YouNeverFindMe
+\end{enumerate}
+Даний файл може періодично оновлюватись. \newline
+Більш актуальну версію можете дивитися тут: \newline
+https://drive.google.com/drive/folders/1US4yXTwLFWrZD0sVRuHWJr591KyDUeB$\_$
+
+
+ 
+\end{document}
